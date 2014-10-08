@@ -1,4 +1,3 @@
-# This migration comes from atmosphere (originally 20130820053720)
 class CreateSecurityPolicies < ActiveRecord::Migration
   def change
     create_table :security_policies do |t|
