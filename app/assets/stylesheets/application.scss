@@ -1,1 +1,9 @@
-@import 'atmosphere/application'
+@import 'atmosphere/application';
+
+.multi-login-box {
+  @extend .login-box;
+
+  form {
+    border-top: 0;
+  }
+}

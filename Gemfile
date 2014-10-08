@@ -38,6 +38,8 @@ gem 'redirus-worker', github: 'dice-cyfronet/redirus-worker', branch: :master, r
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'omniauth-vph'
+
 group :development do
   gem 'annotate'
   gem 'quiet_assets'

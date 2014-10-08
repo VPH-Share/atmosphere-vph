@@ -1,3 +1,5 @@
+require 'devise/strategies/mi_token_authenticatable'
+require 'devise/strategies/token_authenticatable'
 
 Devise.setup do |config|
   config.omniauth :vphticket,
