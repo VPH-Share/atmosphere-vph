@@ -20,4 +20,37 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  devise:
+    mi_ticket: MI Token
+    standard: Standard
+    change_your_password: Change your password
+  security_proxy:
+    created: "Security proxy created"
+    create_error: "Unable to create security proxy"
+    updated: "Security proxy updated"
+    update_error: "Unable to update security proxy"
+  security_policy:
+    created: "Security policy created"
+    create_error: "Unable to create security policy"
+    updated: "Security policy updated"
+    update_error: "Unable to update security policy"
+  security_proxies:
+    title: Proxies
+    long_title: Security Proxies
+    long_title_single: Security Proxy
+    name: Name
+    payload: Payload
+    users: Users
+    new: New Security Proxy
+    edit: Edit this Security Proxy
+    remove: Remove this Security Proxy
+  security_policies:
+    title: Policies
+    long_title: Security Policies
+    long_title_single: Security Policy
+    name: Name
+    payload: Payload
+    users: Users
+    new: New Security Policy
+    edit: Edit this Security Policy
+    remove: Remove this Security Policy

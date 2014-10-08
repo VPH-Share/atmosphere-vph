@@ -13,7 +13,7 @@ class Admin::SecurityProxiesController < Atmosphere::Admin::ApplicationControlle
     if @security_proxy.save
       flash[:notice] = I18n.t('security_proxy.created')
       flash[:alert] = nil
-      redirect_to admin_security_proxies_path
+      redirect_to main_app.admin_security_proxies_path
     else
       flash[:error] = I18n.t('security_proxy.create_error')
       render :new
@@ -24,7 +24,7 @@ class Admin::SecurityProxiesController < Atmosphere::Admin::ApplicationControlle
     if @security_proxy.update_attributes(security_proxy_params)
       flash[:notice] = I18n.t('security_proxy.updated')
       flash[:alert] = nil
-      redirect_to admin_security_proxies_path
+      redirect_to main_app.admin_security_proxies_path
     else
       flash[:error] = I18n.t('security_proxy.update_error')
       render :edit
@@ -33,7 +33,7 @@ class Admin::SecurityProxiesController < Atmosphere::Admin::ApplicationControlle
 
   def destroy
     @security_proxy.destroy
-    redirect_to admin_security_proxies_path
+    redirect_to main_app.admin_security_proxies_path
   end
 
   def security_proxy_params

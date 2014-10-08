@@ -1,0 +1,11 @@
+en:
+  simple_form:
+    labels:
+      security_policy:
+        name: Name
+        payload: Payload
+        users: Users
+      security_proxy:
+        name: Name
+        payload: Payload
+        users: Users
