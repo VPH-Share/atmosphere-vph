@@ -5,6 +5,6 @@
     =f.association :users, input_html: { class: 'input-xlarge'}
   .actions
     %button.btn.btn-success{id: "action-button",  type: "submit"}
-      =fa_icon 'edit'
+      =icon 'edit'
       = t('save')
     = link_to t('back'), main_app.admin_security_policies_path, class: 'btn btn-default'

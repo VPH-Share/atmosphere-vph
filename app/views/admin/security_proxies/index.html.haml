@@ -4,7 +4,7 @@
 %p
   = link_to main_app.new_admin_security_proxy_path,
     class: 'btn btn-success btn-xs', title: t('security_proxies.new') do
-    =fa_icon 'plus'
+    =icon 'plus'
     = t('add_new')
 
 %p
@@ -22,7 +22,7 @@
           .btn-group
             = link_to main_app.edit_admin_security_proxy_path(security_proxy),
               class: 'btn btn-warning btn-xs', title: t('security_proxies.edit') do
-              =fa_icon 'edit'
+              =icon 'edit'
             = link_to [main_app, :admin, security_proxy], :method => :delete, :data => { :confirm => t('are_you_sure') },
               class: 'btn btn-danger btn-xs', title: t('security_proxies.remove') do
-              =fa_icon 'trash-o'
+              =icon 'trash-o'
