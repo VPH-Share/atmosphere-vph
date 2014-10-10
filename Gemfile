@@ -74,3 +74,6 @@ group :test do
   gem 'ffaker'
   gem 'database_cleaner'
 end
+
+gem 'puma'
+gem 'clockwork'

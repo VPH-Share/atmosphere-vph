@@ -248,6 +248,8 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
+    puma (2.9.0)
+      rack (>= 1.1, < 2.0)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -389,6 +391,7 @@ DEPENDENCIES
   atmosphere!
   better_errors
   binding_of_caller
+  clockwork
   coffee-rails (~> 4.0.0)
   database_cleaner
   factory_girl
@@ -401,6 +404,7 @@ DEPENDENCIES
   omniauth-vph
   pg
   pry-rails
+  puma
   quiet_assets
   rails (= 4.1.6)
   rails_best_practices
