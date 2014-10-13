@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       owned_payload_resources :security_proxies
       owned_payload_resources :security_policies
+
+      resources :appliance_endpoints, only: [:index, :show]
     end
   end
 end
