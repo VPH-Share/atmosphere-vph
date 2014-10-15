@@ -7,7 +7,7 @@ class CreateSecurityProxies < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :security_proxies_users do |t|
+    create_table :atmosphere_users_security_proxies do |t|
       t.belongs_to :user
       t.belongs_to :security_proxy
     end

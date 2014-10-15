@@ -7,7 +7,7 @@ class CreateSecurityPolicies < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :security_policies_users do |t|
+    create_table :atmosphere_users_security_policies do |t|
       t.belongs_to :user
       t.belongs_to :security_policy
     end

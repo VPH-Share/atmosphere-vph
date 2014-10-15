@@ -23,11 +23,11 @@ class Api::V1::ApplianceEndpointsController < Atmosphere::Api::ApplicationContro
 
   def limit_appliance_types
     @appliance_types = if @endpoint_ids
-        @appliance_types.where("id IN (SELECT appliance_type_id FROM port_mapping_templates where id IN (SELECT port_mapping_template_id from endpoints WHERE id IN (?)))", @endpoint_ids)
+        @appliance_types.where("id IN (SELECT appliance_type_id FROM atmosphere_port_mapping_templates where id IN (SELECT port_mapping_template_id from atmosphere_endpoints WHERE id IN (?)))", @endpoint_ids)
       elsif @endpoint_types
-        @appliance_types.where("id IN (SELECT appliance_type_id FROM port_mapping_templates where id IN (SELECT port_mapping_template_id from endpoints WHERE endpoint_type IN (?)))", @endpoint_types)
+        @appliance_types.where("id IN (SELECT appliance_type_id FROM atmosphere_port_mapping_templates where id IN (SELECT port_mapping_template_id from atmosphere_endpoints WHERE endpoint_type IN (?)))", @endpoint_types)
       else
-        @appliance_types.where('id IN (SELECT appliance_type_id FROM port_mapping_templates where id IN (SELECT port_mapping_template_id from endpoints))')
+        @appliance_types.where('id IN (SELECT appliance_type_id FROM atmosphere_port_mapping_templates where id IN (SELECT port_mapping_template_id from atmosphere_endpoints))')
       end
   end
 end
