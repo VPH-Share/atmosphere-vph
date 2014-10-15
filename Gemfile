@@ -24,7 +24,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'atmosphere', path: '/home/marek/git/atmosphere'
 
-gem 'redirus-worker', github: 'dice-cyfronet/redirus-worker', branch: :master, require: 'redirus/worker/proxy'
+gem 'active_model_serializers', '0.8.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

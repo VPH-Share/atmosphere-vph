@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/dice-cyfronet/redirus-worker.git
-  revision: e2f872129007489c06cb327f19b16a2daf102dc4
-  branch: master
-  specs:
-    redirus-worker (0.0.1)
-      sidekiq
-
-GIT
   remote: git://github.com/yelled3/rspec-sidekiq.git
   revision: e4d2e34dcccfc51bb5b7c67fe06786eaa6c8e0d2
   branch: rspec3-beta
@@ -70,7 +62,7 @@ GEM
       activesupport (= 4.1.6)
       builder (~> 3.1)
       erubis (~> 2.7.0)
-    active_model_serializers (0.8.2)
+    active_model_serializers (0.8.1)
       activemodel (>= 3.0)
     activemodel (4.1.6)
       activesupport (= 4.1.6)
@@ -402,6 +394,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers (= 0.8.1)
   annotate
   atmosphere!
   better_errors
@@ -423,7 +416,6 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.1.6)
   rails_best_practices
-  redirus-worker!
   rspec-rails
   rspec-sidekiq!
   sass-rails (~> 4.0.3)
