@@ -242,6 +242,16 @@ ActiveRecord::Schema.define(version: 20141013071627) do
   add_index "atmosphere_users", ["email"], name: "index_atmosphere_users_on_email", unique: true, using: :btree
   add_index "atmosphere_users", ["login"], name: "index_atmosphere_users_on_login", unique: true, using: :btree
 
+  create_table "atmosphere_users_security_policies", force: true do |t|
+    t.integer "user_id"
+    t.integer "security_policy_id"
+  end
+
+  create_table "atmosphere_users_security_proxies", force: true do |t|
+    t.integer "user_id"
+    t.integer "security_proxy_id"
+  end
+
   create_table "atmosphere_virtual_machine_flavors", force: true do |t|
     t.string  "flavor_name",                                null: false
     t.float   "cpu"
@@ -296,11 +306,6 @@ ActiveRecord::Schema.define(version: 20141013071627) do
 
   add_index "security_policies", ["name"], name: "index_security_policies_on_name", unique: true, using: :btree
 
-  create_table "security_policies_users", force: true do |t|
-    t.integer "user_id"
-    t.integer "security_policy_id"
-  end
-
   create_table "security_proxies", force: true do |t|
     t.string   "name"
     t.text     "payload"
@@ -309,11 +314,6 @@ ActiveRecord::Schema.define(version: 20141013071627) do
   end
 
   add_index "security_proxies", ["name"], name: "index_security_proxies_on_name", unique: true, using: :btree
-
-  create_table "security_proxies_users", force: true do |t|
-    t.integer "user_id"
-    t.integer "security_proxy_id"
-  end
 
   add_foreign_key "atmosphere_appliance_configuration_instances", "atmosphere_appliance_configuration_templates", name: "ac_instances_ac_template_id_fk", column: "appliance_configuration_template_id"
 
