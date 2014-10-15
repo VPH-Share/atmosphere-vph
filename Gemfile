@@ -22,7 +22,7 @@ gem 'turbolinks'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'atmosphere', path: '/home/marek/git/rails/air'
+gem 'atmosphere', path: '/home/marek/git/atmosphere'
 
 gem 'redirus-worker', github: 'dice-cyfronet/redirus-worker', branch: :master, require: 'redirus/worker/proxy'
 

@@ -1,7 +1,6 @@
-# This migration comes from atmosphere (originally 20140506124415)
 class AddApplianceDescription < ActiveRecord::Migration
   def change
-    add_column :appliances, :description, :text
+    add_column :atmosphere_appliances, :description, :text
 
     Atmosphere::Appliance.all.find_each do |appl|
       at = appl.appliance_type

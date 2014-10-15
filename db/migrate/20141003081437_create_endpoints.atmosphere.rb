@@ -1,7 +1,6 @@
-# This migration comes from atmosphere (originally 20130826162855)
 class CreateEndpoints < ActiveRecord::Migration
   def change
-    create_table :endpoints do |t|
+    create_table :atmosphere_endpoints do |t|
       t.string :name,                         null: false
       t.text :description
       # The below should force MySQL to use MEDIUMTEXT or LONGTEXT
@@ -14,7 +13,9 @@ class CreateEndpoints < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_foreign_key :endpoints, :port_mapping_templates
+    add_foreign_key :atmosphere_endpoints,
+                    :atmosphere_port_mapping_templates,
+                    column: 'port_mapping_template_id'
 
   end
 end
