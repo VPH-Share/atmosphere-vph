@@ -11,4 +11,8 @@ Atmosphere.setup do |config|
   if Air.config.at_pdp
     config.at_pdp_class = Air.config.at_pdp.constantize
   end
+
+  if Air.config['zabbix']
+    config.monitoring_client = Atmosphere::Monitoring::ZabbixClient.new
+  end
 end
