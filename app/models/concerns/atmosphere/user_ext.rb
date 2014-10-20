@@ -2,6 +2,8 @@ module Atmosphere::UserExt
   extend ActiveSupport::Concern
 
   included do
+    include Atmosphere::TokenAuthenticatable
+
     has_and_belongs_to_many :security_proxies,
       class_name: '::SecurityProxy'
 
