@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015090406) do
+ActiveRecord::Schema.define(version: 20141021103448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,11 +42,12 @@ ActiveRecord::Schema.define(version: 20141015090406) do
 
   create_table "atmosphere_appliance_sets", force: true do |t|
     t.string   "name"
-    t.integer  "priority",           default: 50,         null: false
-    t.string   "appliance_set_type", default: "workflow", null: false
-    t.integer  "user_id",                                 null: false
+    t.integer  "priority",            default: 50,         null: false
+    t.string   "appliance_set_type",  default: "workflow", null: false
+    t.integer  "user_id",                                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "optimization_policy"
   end
 
   add_index "atmosphere_appliance_sets", ["user_id"], name: "index_atmosphere_appliance_sets_on_user_id", using: :btree
@@ -85,6 +86,8 @@ ActiveRecord::Schema.define(version: 20141015090406) do
     t.string   "billing_state",                       default: "prepaid", null: false
     t.datetime "prepaid_until",                       default: "now()",   null: false
     t.text     "description"
+    t.string   "optimization_policy"
+    t.text     "optimization_policy_params"
   end
 
   create_table "atmosphere_billing_logs", force: true do |t|
