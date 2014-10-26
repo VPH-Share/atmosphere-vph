@@ -45,6 +45,6 @@ module Clockwork
   end
 
   every(5.minutes, 'cleaning mi loging strategy cache') do
-    Atmosphere::MiCacheCleanerWorker.perform_async
+    MiCacheCleanerWorker.perform_async
   end
 end
