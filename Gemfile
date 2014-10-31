@@ -42,6 +42,9 @@ gem 'active_model_serializers', '0.8.1'
 
 gem 'omniauth-vph'
 
+# Cross-Origin Resource Scharing for external UIs
+gem 'rack-cors', :require => 'rack/cors'
+
 group :development do
   gem 'annotate'
   gem 'quiet_assets'
