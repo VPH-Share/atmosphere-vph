@@ -7,11 +7,6 @@ Atmosphere.setup do |config|
     main_app: [ SecurityProxy, SecurityPolicy ]
   }
 
-  if Settings['sidekiq']
-    config.sidekiq.url = Settings.sidekiq.url
-    config.sidekiq.namespace = Settings.sidekiq.namespace
-  end
-
   if Settings['at_pdp']
     config.at_pdp_class = Settings.at_pdp.constantize
   end
