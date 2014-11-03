@@ -7,6 +7,8 @@ Atmosphere.setup do |config|
     main_app: [ SecurityProxy, SecurityPolicy ]
   }
 
+  config.ability_class = 'Ability'
+
   if Settings['at_pdp']
     config.at_pdp_class = Settings.at_pdp.constantize
   end
