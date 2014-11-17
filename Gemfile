@@ -24,7 +24,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'atmosphere',
     git: 'https://gitlab.dev.cyfronet.pl/atmosphere/atmosphere.git',
-    branch: 'master'
+    branch: 'stable'
 
 gem 'active_model_serializers', '0.8.1'
 
