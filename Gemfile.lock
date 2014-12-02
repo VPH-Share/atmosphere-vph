@@ -39,15 +39,6 @@ GIT
       will_paginate (~> 3.0.5)
       zabbixapi
 
-GIT
-  remote: git://github.com/yelled3/rspec-sidekiq.git
-  revision: e4d2e34dcccfc51bb5b7c67fe06786eaa6c8e0d2
-  branch: rspec3-beta
-  specs:
-    rspec-sidekiq (1.0.0)
-      rspec (>= 3.0.0)
-      sidekiq (>= 2.4.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -357,6 +348,9 @@ GEM
       rspec-expectations (~> 3.1.0)
       rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
+    rspec-sidekiq (2.0.0)
+      rspec (~> 3.0, >= 3.0.0)
+      sidekiq (>= 2.4.0)
     rspec-support (3.1.0)
     ruby-progressbar (1.5.1)
     sass (3.2.19)
@@ -454,7 +448,7 @@ DEPENDENCIES
   rails (= 4.1.6)
   rails_best_practices
   rspec-rails
-  rspec-sidekiq!
+  rspec-sidekiq
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   shoulda-matchers
