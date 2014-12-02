@@ -23,7 +23,7 @@ gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'atmosphere',
-    git: 'https://gitlab.dev.cyfronet.pl/atmosphere/atmosphere.git',
+    github: 'dice-cyfronet/atmosphere',
     branch: 'master'
 
 gem 'active_model_serializers', '0.8.1'
