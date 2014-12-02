@@ -82,3 +82,4 @@ end
 
 gem 'puma'
 gem 'clockwork'
+gem 'newrelic_rpm'

@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://gitlab.dev.cyfronet.pl/atmosphere/atmosphere.git
-  revision: 685f2848bc214214ed0a40d334c1e36a8bfa1471
+  revision: 4ceb47451319ad86d9e5cb922c364150b01e804e
   branch: master
   specs:
     atmosphere (0.0.1)
@@ -236,6 +236,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
+    newrelic_rpm (3.9.7.266)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     nprogress-rails (0.1.6.3)
@@ -412,6 +413,7 @@ DEPENDENCIES
   guard-spring
   jquery-rails
   letter_opener
+  newrelic_rpm
   omniauth-vph
   pg
   pry-rails
