@@ -82,6 +82,7 @@ test:
 #
 production:
   <<: *default
+  pool: 15
   database: vphshare_production
   username: <%= ENV['VPHSHARE_DATABASE_USERNAME'] || 'vphshare' %>
   password: <%= ENV['VPHSHARE_DATABASE_PASSWORD'] %>
