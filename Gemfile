@@ -23,7 +23,7 @@ gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'atmosphere',
-    git: 'https://gitlab.dev.cyfronet.pl/atmosphere/atmosphere.git',
+    github: 'dice-cyfronet/atmosphere',
     branch: 'stable'
 
 gem 'active_model_serializers', '0.8.1'
@@ -71,8 +71,7 @@ end
 
 group :test do
   gem 'rspec-rails'
-  # gem 'rspec-sidekiq'
-  gem 'rspec-sidekiq', github: 'yelled3/rspec-sidekiq', branch: 'rspec3-beta'
+  gem 'rspec-sidekiq'
   gem 'shoulda-matchers'
 
   gem 'factory_girl'
@@ -82,3 +81,4 @@ end
 
 gem 'puma'
 gem 'clockwork'
+gem 'newrelic_rpm'
