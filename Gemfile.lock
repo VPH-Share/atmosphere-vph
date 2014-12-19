@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: a3992190df56c4491bcd0c99b20561de6df0d65c
+  revision: c9c97c38ffbbf03aafe1513f295e93979671f48b
   branch: master
   specs:
     atmosphere (0.0.1)
@@ -17,6 +17,7 @@ GIT
       github-markup
       gravtastic
       haml-rails
+      highcharts-rails (~> 4.0.4)
       influxdb
       jquery-rails
       jquery-turbolinks
@@ -153,7 +154,7 @@ GEM
       fog-core (~> 1.22)
       fog-json
       inflecto (~> 0.0.2)
-    fog-core (1.27.1)
+    fog-core (1.27.2)
       builder
       excon (~> 0.38)
       formatador (~> 0.2)
@@ -229,6 +230,8 @@ GEM
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
     hashie (3.3.2)
+    highcharts-rails (4.0.4.1)
+      railties (>= 3.1)
     hike (1.2.3)
     hitimes (1.2.2)
     hpricot (0.8.6)
