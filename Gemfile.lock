@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: c9c97c38ffbbf03aafe1513f295e93979671f48b
+  revision: cd78819df2ea1a7e385b541054aea72d153f2f17
   branch: stable
   specs:
     atmosphere (0.0.1)
@@ -43,7 +43,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    CFPropertyList (2.2.8)
+    CFPropertyList (2.3.0)
     actionmailer (4.1.8)
       actionpack (= 4.1.8)
       actionview (= 4.1.8)
@@ -120,25 +120,27 @@ GEM
     enumerize (0.9.0)
       activesupport (>= 3.2)
     erubis (2.7.0)
-    excon (0.42.1)
+    excon (0.43.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
-    faraday (0.9.0)
+    faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     ffaker (1.25.0)
     ffi (1.9.6)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
-    fog (1.26.0)
+    fog (1.27.0)
       fog-atmos
+      fog-aws (~> 0.0)
       fog-brightbox (~> 0.4)
-      fog-core (~> 1.27, >= 1.27.1)
+      fog-core (~> 1.27, >= 1.27.3)
       fog-ecloud
       fog-json
       fog-profitbricks
       fog-radosgw (>= 0.0.2)
       fog-sakuracloud (>= 0.0.4)
+      fog-serverlove
       fog-softlayer
       fog-storm_on_demand
       fog-terremark
@@ -150,11 +152,16 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
+    fog-aws (0.0.6)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
     fog-brightbox (0.7.1)
       fog-core (~> 1.22)
       fog-json
       inflecto (~> 0.0.2)
-    fog-core (1.27.2)
+    fog-core (1.27.3)
       builder
       excon (~> 0.38)
       formatador (~> 0.2)
@@ -177,8 +184,11 @@ GEM
     fog-sakuracloud (0.1.1)
       fog-core
       fog-json
-    fog-softlayer (0.3.25)
+    fog-serverlove (0.1.1)
       fog-core
+      fog-json
+    fog-softlayer (0.3.28)
+      fog-core (>= 1.27.3)
       fog-json
     fog-storm_on_demand (0.1.0)
       fog-core
@@ -197,7 +207,7 @@ GEM
       nokogiri (~> 1.5, >= 1.5.11)
     font-awesome-sass (4.2.2)
       sass (~> 3.2)
-    foreigner (1.7.1)
+    foreigner (1.7.2)
       activerecord (>= 3.0.0)
     foreman (0.76.0)
       dotenv (~> 1.0.2)
@@ -223,7 +233,7 @@ GEM
       spring
     haml (4.1.0.beta.1)
       tilt
-    haml-rails (0.6.0)
+    haml-rails (0.7.0)
       actionpack (>= 4.0.1)
       activesupport (>= 4.0.1)
       haml (>= 3.1, < 5.0)
@@ -240,7 +250,7 @@ GEM
       haml (>= 4.0.0.rc.1)
       hpricot (~> 0.8.6)
       ruby_parser (~> 3.1.1)
-    i18n (0.6.11)
+    i18n (0.7.0)
     inflecto (0.0.2)
     influxdb (0.1.8)
       json
@@ -251,7 +261,7 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
-    json (1.8.1)
+    json (1.8.2)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.3.0)
@@ -265,18 +275,18 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.4.3)
-    mini_portile (0.6.1)
-    minitest (5.5.0)
+    mini_portile (0.6.2)
+    minitest (5.5.1)
     multi_json (1.10.1)
     multipart-post (2.0.0)
     nenv (0.1.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (2.9.1)
+    net-ssh (2.9.2)
     newrelic_rpm (3.9.8.273)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
-    nprogress-rails (0.1.6.3)
+    nprogress-rails (0.1.6.5)
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
@@ -285,7 +295,7 @@ GEM
       multi_json
       omniauth (~> 1.0)
     orm_adapter (0.5.0)
-    pg (0.17.1)
+    pg (0.18.1)
     posix-spawn (0.3.9)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -301,7 +311,7 @@ GEM
     rack-cors (0.2.9)
     rack-protection (1.5.3)
       rack
-    rack-test (0.6.2)
+    rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.1.8)
       actionmailer (= 4.1.8)
@@ -371,7 +381,7 @@ GEM
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
     sass (3.4.9)
-    sass-rails (5.0.0)
+    sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
