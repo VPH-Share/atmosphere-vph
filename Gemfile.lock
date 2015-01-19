@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: 6469b32dcd9272de52995ffe43b6590cb6c332b9
+  revision: 7ddeeffe4ae660d2ee7270f68a8fb7177dcf3b69
   branch: feature_migrating_virtual_machine_templates
   specs:
     atmosphere (0.0.1)
