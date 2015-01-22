@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: 98e0c2fb030aaa6e527e924907c871b8eda5f5c9
+  revision: 8b5d225576ddb6a579317febae1a891b6489bdfc
   branch: feature_migrating_virtual_machine_templates
   specs:
     atmosphere (0.0.1)
@@ -10,6 +10,7 @@ GIT
       clockwork
       coffee-rails (~> 4.1.0)
       devise (~> 3.2)
+      draper (~> 1.3)
       enumerize
       fog
       font-awesome-sass (~> 4.2.0)
@@ -109,7 +110,7 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     colored (1.2)
-    connection_pool (2.1.0)
+    connection_pool (2.1.1)
     database_cleaner (1.3.0)
     debug_inspector (0.0.2)
     devise (3.4.1)
@@ -121,6 +122,11 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     dotenv (1.0.2)
+    draper (1.4.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     enumerize (0.9.0)
       activesupport (>= 3.2)
     erubis (2.7.0)
@@ -185,7 +191,7 @@ GEM
       fog-core (>= 1.21.0)
       fog-json
       fog-xml (>= 0.0.1)
-    fog-sakuracloud (0.1.2)
+    fog-sakuracloud (1.0.0)
       fog-core
       fog-json
     fog-serverlove (0.1.1)
@@ -355,6 +361,7 @@ GEM
     redis (3.2.0)
     redis-namespace (1.5.1)
       redis (~> 3.0, >= 3.0.4)
+    request_store (1.1.0)
     require_all (1.3.2)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
@@ -426,7 +433,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.2.2)
+    sprockets-rails (2.2.3)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
