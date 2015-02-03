@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: cd78819df2ea1a7e385b541054aea72d153f2f17
+  revision: 391e939445ea04c8ec02f51eddb071180cf161f6
   branch: stable
   specs:
     atmosphere (0.0.1)
@@ -77,16 +77,20 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (5.1.3)
+      execjs
+      json
     awesome_print (1.2.0)
-    bcrypt (3.1.9)
+    bcrypt (3.1.10)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.1.0)
-      sass (~> 3.2)
+    bootstrap-sass (3.3.3)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     builder (3.2.2)
     cancan (1.6.10)
     celluloid (0.16.0)
@@ -103,9 +107,9 @@ GEM
     coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.8.0)
+    coffee-script-source (1.9.0)
     colored (1.2)
-    connection_pool (2.1.0)
+    connection_pool (2.1.1)
     database_cleaner (1.3.0)
     debug_inspector (0.0.2)
     devise (3.4.1)
@@ -120,7 +124,7 @@ GEM
     enumerize (0.9.0)
       activesupport (>= 3.2)
     erubis (2.7.0)
-    excon (0.43.0)
+    excon (0.44.1)
     execjs (2.2.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -152,7 +156,7 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (0.0.6)
+    fog-aws (0.0.8)
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
@@ -161,7 +165,7 @@ GEM
       fog-core (~> 1.22)
       fog-json
       inflecto (~> 0.0.2)
-    fog-core (1.27.3)
+    fog-core (1.28.0)
       builder
       excon (~> 0.38)
       formatador (~> 0.2)
@@ -181,14 +185,14 @@ GEM
       fog-core (>= 1.21.0)
       fog-json
       fog-xml (>= 0.0.1)
-    fog-sakuracloud (0.1.1)
+    fog-sakuracloud (1.0.0)
       fog-core
       fog-json
     fog-serverlove (0.1.1)
       fog-core
       fog-json
-    fog-softlayer (0.3.28)
-      fog-core (>= 1.27.3)
+    fog-softlayer (0.4.0)
+      fog-core
       fog-json
     fog-storm_on_demand (0.1.0)
       fog-core
@@ -231,25 +235,24 @@ GEM
     guard-spring (0.0.4)
       guard
       spring
-    haml (4.1.0.beta.1)
+    haml (4.0.6)
       tilt
-    haml-rails (0.7.0)
+    haml-rails (0.8.2)
       actionpack (>= 4.0.1)
       activesupport (>= 4.0.1)
       haml (>= 3.1, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
-    hashie (3.3.2)
+    hashie (3.4.0)
     highcharts-rails (4.0.4.1)
       railties (>= 3.1)
     hike (1.2.3)
     hitimes (1.2.2)
-    hpricot (0.8.6)
-    html2haml (1.0.1)
+    html2haml (2.0.0)
       erubis (~> 2.7.0)
-      haml (>= 4.0.0.rc.1)
-      hpricot (~> 0.8.6)
-      ruby_parser (~> 3.1.1)
+      haml (~> 4.0.0)
+      nokogiri (~> 1.6.0)
+      ruby_parser (~> 3.5)
     i18n (0.7.0)
     inflecto (0.0.2)
     influxdb (0.1.8)
@@ -284,9 +287,9 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
     newrelic_rpm (3.9.8.273)
-    nokogiri (1.6.5)
+    nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-    nprogress-rails (0.1.6.5)
+    nprogress-rails (0.1.6.6)
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
@@ -378,9 +381,9 @@ GEM
       sidekiq (>= 2.4.0)
     rspec-support (3.1.2)
     ruby-progressbar (1.7.0)
-    ruby_parser (3.1.3)
+    ruby_parser (3.6.4)
       sexp_processor (~> 4.1)
-    sass (3.4.9)
+    sass (3.4.11)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
@@ -390,18 +393,18 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    sentry-raven (0.12.2)
+    sentry-raven (0.12.3)
       faraday (>= 0.7.6)
     settingslogic (2.0.9)
-    sexp_processor (4.4.4)
+    sexp_processor (4.4.5)
     shoulda-matchers (2.7.0)
       activesupport (>= 3.0.0)
     showdown-rails (0.0.4)
       actionpack (>= 3.1)
       railties (>= 3.1)
-    sidekiq (3.3.0)
+    sidekiq (3.3.1)
       celluloid (>= 0.16.0)
-      connection_pool (>= 2.0.0)
+      connection_pool (>= 2.1.1)
       json
       redis (>= 3.0.6)
       redis-namespace (>= 1.3.1)
@@ -421,7 +424,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.2.2)
+    sprockets-rails (2.2.4)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
