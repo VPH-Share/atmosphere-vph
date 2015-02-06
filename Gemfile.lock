@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: 2352de8b669bc5805228ae4ca746831c3ee66a06
-  branch: master
+  revision: 5c15ca3b14c0ff0aae74225a43f4effbfecb6e2d
+  branch: action_log
   specs:
     atmosphere (0.0.1)
       active_model_serializers (~> 0.8.0)
