@@ -1,7 +1,6 @@
 require 'devise/strategies/base'
 require 'omniauth-vph'
 require 'devise/strategies/sudoable'
-require 'atmosphere/cache_entry'
 
 module Devise
   module Strategies
@@ -53,32 +52,15 @@ module Devise
           })
       end
 
-      def mi_ticket
-        params[Air.config.mi_authentication_key] ||
-          request.headers[Air.config.header_mi_authentication_key]
-      end
-
       def user_info(mi_ticket)
-        cached_data = cached_user_info(mi_ticket)
-        if cached_data.valid?
-          cached_data.value
-        else
-          load_user_info(mi_ticket)
+        Rails.cache.fetch(mi_ticket,  expires_in: 5.minutes) do
+          adaptor.user_info(mi_ticket)
         end
       end
 
-      def load_user_info(mi_ticket)
-        user_info = adaptor.user_info(mi_ticket)
-        cache[mi_ticket] = Atmosphere::CacheEntry.new(user_info, 5.minutes)
-        user_info
-      end
-
-      def cached_user_info(mi_ticket)
-        cache[mi_ticket] || Atmosphere::NullCacheEntry.new
-      end
-
-      def cache
-        @@cache ||= {}
+      def mi_ticket
+        params[Air.config.mi_authentication_key] ||
+          request.headers[Air.config.header_mi_authentication_key]
       end
     end
   end
