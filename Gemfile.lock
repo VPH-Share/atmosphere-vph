@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: 391e939445ea04c8ec02f51eddb071180cf161f6
+  revision: 2707e4f03de74a017d5a3a436b48c64f6fa1c8a9
   branch: stable
   specs:
     atmosphere (0.0.1)
@@ -77,7 +77,7 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
-    autoprefixer-rails (5.1.3)
+    autoprefixer-rails (5.1.3.1)
       execjs
       json
     awesome_print (1.2.0)
@@ -125,7 +125,7 @@ GEM
       activesupport (>= 3.2)
     erubis (2.7.0)
     excon (0.44.1)
-    execjs (2.2.2)
+    execjs (2.3.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     faraday (0.9.1)
@@ -156,7 +156,7 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (0.0.8)
+    fog-aws (0.1.0)
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
@@ -402,7 +402,7 @@ GEM
     showdown-rails (0.0.4)
       actionpack (>= 3.1)
       railties (>= 3.1)
-    sidekiq (3.3.1)
+    sidekiq (3.3.2)
       celluloid (>= 0.16.0)
       connection_pool (>= 2.1.1)
       json
