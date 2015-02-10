@@ -1,4 +1,4 @@
-# VPH-Share Atmosphere
+# VPH-Share Atmosphere [![Build Status](https://travis-ci.org/VPH-Share/atmosphere-vph.svg)](https://travis-ci.org/VPH-Share/atmosphere-vph)
 
 This is a VPH-SHare specific Atmosphere deployment. To learn more about
 Atmosphere take a look [here](https://github.com/dice-cyfronet/atmosphere).
