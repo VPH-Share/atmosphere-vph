@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: 2352de8b669bc5805228ae4ca746831c3ee66a06
+  revision: 0da09c7319cba202e544d587d7d11ccc53697cd8
   branch: master
   specs:
     atmosphere (0.0.1)
@@ -79,7 +79,7 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
-    autoprefixer-rails (5.1.3.1)
+    autoprefixer-rails (5.1.5)
       execjs
       json
     awesome_print (1.2.0)
