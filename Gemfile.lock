@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: 004cffba2f4c647114921ba7e558efc0471a01ca
+  revision: 8a9b535cbd798cf39f199fb27b8e49243059f469
   branch: master
   specs:
     atmosphere (0.0.1)
@@ -239,9 +239,6 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    guard-spring (0.0.4)
-      guard
-      spring
     haml (4.0.6)
       tilt
     haml-rails (0.8.2)
@@ -475,7 +472,6 @@ DEPENDENCIES
   ffaker
   foreman
   guard-rspec
-  guard-spring
   jquery-rails
   letter_opener
   newrelic_rpm
