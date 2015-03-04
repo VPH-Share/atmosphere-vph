@@ -9,6 +9,12 @@ Atmosphere.setup do |config|
 
   config.ability_class = 'Ability'
 
+  config.url_monitoring.pending = 1000
+  config.url_monitoring.ok = 12000
+  config.url_monitoring.lost = 15000
+
+
+
   if Settings['at_pdp']
     config.at_pdp_class = Settings.at_pdp.constantize
   end

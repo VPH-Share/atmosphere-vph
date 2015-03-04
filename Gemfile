@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'fog', path: '/home/tomek/work/atmosphere/src/fog'
+gem 'azure', '0.6.4'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
@@ -22,9 +25,7 @@ gem 'turbolinks'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'atmosphere',
-    github: 'dice-cyfronet/atmosphere',
-    branch: 'master'
+gem 'atmosphere', path: '/home/tomek/work/atmosphere/src/atmosphere'
 
 gem 'active_model_serializers', '0.8.1'
 
