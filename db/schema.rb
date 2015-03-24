@@ -72,11 +72,11 @@ ActiveRecord::Schema.define(version: 20150225145727) do
   add_index "atmosphere_appliance_sets", ["user_id"], name: "index_atmosphere_appliance_sets_on_user_id", using: :btree
 
   create_table "atmosphere_appliance_types", force: true do |t|
-    t.string   "name",                                        null: false
+    t.string   "name",                                 null: false
     t.text     "description"
-    t.boolean  "shared",                    default: false,   null: false
-    t.boolean  "scalable",                  default: false,   null: false
-    t.string   "visible_to",                default: "owner", null: false
+    t.boolean  "shared",             default: false,   null: false
+    t.boolean  "scalable",           default: false,   null: false
+    t.string   "visible_to",         default: "owner", null: false
     t.float    "preference_cpu"
     t.integer  "preference_memory"
     t.integer  "preference_disk"
@@ -85,11 +85,11 @@ ActiveRecord::Schema.define(version: 20150225145727) do
     t.datetime "updated_at"
     t.integer  "security_proxy_id"
     t.string   "metadata_global_id"
-    t.integer  "atmosphere_os_families_id"
+    t.integer  "os_family_id"
   end
 
-  add_index "atmosphere_appliance_types", ["atmosphere_os_families_id"], name: "index_atmosphere_appliance_types_on_atmosphere_os_families_id", using: :btree
   add_index "atmosphere_appliance_types", ["name"], name: "index_atmosphere_appliance_types_on_name", unique: true, using: :btree
+  add_index "atmosphere_appliance_types", ["os_family_id"], name: "index_atmosphere_appliance_types_on_os_family_id", using: :btree
 
   create_table "atmosphere_appliances", force: true do |t|
     t.integer  "appliance_set_id",                                    null: false

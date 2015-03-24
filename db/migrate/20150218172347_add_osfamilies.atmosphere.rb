@@ -1,4 +1,3 @@
-# This migration comes from atmosphere (originally 20150113100404)
 # This migration creates all the necessary schema models to ensure flavor and appliance type
 # differentiation into OS families (typically Linux and Windows). This is necessary to facilitate
 # proper billing where the price of a flavor depends on the installed OS.
@@ -17,11 +16,15 @@ class AddOsfamilies < ActiveRecord::Migration
       t.belongs_to :os_family
     end
 
-    add_reference :atmosphere_appliance_types, :atmosphere_os_families, index: true
+    add_reference :atmosphere_appliance_types, :os_family, index: true
 
     # Spawn two records and rewrite existing ATypes to bind to a specific os_family
     os_windows = Atmosphere::OSFamily.create(name: 'Windows')
     os_linux = Atmosphere::OSFamily.create(name: 'Linux')
+
+    # for some reason we need to force ApplianceType model class
+    # without it rake migrate:redo failed
+    Atmosphere::ApplianceType.reset_column_information
 
     # Rewrite all existing ATs to use the 'windows' OS (correct later as necessary)
 
@@ -52,7 +55,7 @@ class AddOsfamilies < ActiveRecord::Migration
       end
     end
 
-    remove_column :atmosphere_appliance_types, :atmosphere_os_families_id
+    remove_column :atmosphere_appliance_types, :os_family_id
 
     drop_table :atmosphere_flavor_os_families
     drop_table :atmosphere_os_families
