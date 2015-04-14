@@ -24,7 +24,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'atmosphere',
     github: 'dice-cyfronet/atmosphere',
-    branch: 'master'
+    branch: 'use_engine_migrations'
 
 gem 'active_model_serializers', '0.8.1'
 

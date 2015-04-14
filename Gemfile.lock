@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: d8d902d9e16a7e182ccc989169e2e2a98f5bf200
-  branch: master
+  revision: aa374383c5c279b846c617659fd38ee6df6b70a7
+  branch: use_engine_migrations
   specs:
     atmosphere (0.0.1)
       active_model_serializers (~> 0.8.0)
@@ -75,7 +75,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    addressable (2.3.6)
+    addressable (2.3.8)
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
