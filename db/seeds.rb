@@ -1,7 +1,15 @@
-Atmosphere::User.create(login: 'admin',
-                        full_name: 'Admin',
-                        email: 'admin@example.com',
-                        password: 's3cr3t!!!',
-                        password_confirmation: 's3cr3t!!!',
-                        authentication_token: 'change_me',
-                        roles: [:admin, :developer])
+Atmosphere::OSFamily.find_or_create_by(name: 'Windows')
+Atmosphere::OSFamily.find_or_create_by(name: 'Linux')
+
+unless Rails.env.test?
+  Atmosphere::User.find_or_initialize_by(login: 'admin').tap do |u|
+    u.full_name = 'Admin'
+    u.email = 'admin@example.com'
+    u.password = 's3cr3t!!!'
+    u.password_confirmation = 's3cr3t!!!'
+    u.authentication_token = 'change_me'
+    u.roles = [:admin, :developer]
+
+    u.save!
+  end
+end
