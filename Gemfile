@@ -5,7 +5,7 @@ gem 'azure', '0.6.4'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.8'
+gem 'rails', '4.1.10'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
