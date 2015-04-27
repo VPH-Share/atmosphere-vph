@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 require 'mi_resource_access'
 require 'json'
 
