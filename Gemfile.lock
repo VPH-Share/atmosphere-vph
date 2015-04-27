@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: ded5a42ca84d7c91971f4e1a210087dfec2423a7
+  revision: ad7642d3aa08842f9876800fc05ea5b0c9795c93
   branch: master
   specs:
     atmosphere (0.0.1)
@@ -84,7 +84,7 @@ GEM
       addressable (>= 2.3.1)
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
-    autoprefixer-rails (5.1.10)
+    autoprefixer-rails (5.1.11)
       execjs
       json
     bcrypt (3.1.10)
@@ -134,7 +134,7 @@ GEM
     enumerize (0.11.0)
       activesupport (>= 3.2)
     erubis (2.7.0)
-    excon (0.45.2)
+    excon (0.45.3)
     execjs (2.5.2)
     extlib (0.9.16)
     factory_girl (4.5.0)
@@ -253,11 +253,11 @@ GEM
       multi_json (~> 1.10)
       retriable (~> 1.4)
       signet (~> 0.6)
-    googleauth (0.4.0)
+    googleauth (0.4.1)
       faraday (~> 0.9)
       jwt (~> 1.4)
-      logging (~> 1.8)
-      memoist (~> 0.11)
+      logging (~> 2.0)
+      memoist (~> 0.12)
       multi_json (= 1.11)
       signet (~> 0.6)
     gravtastic (3.2.6)
@@ -314,9 +314,9 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     little-plugger (1.1.3)
-    logging (1.8.2)
-      little-plugger (>= 1.1.3)
-      multi_json (>= 1.8.4)
+    logging (2.0.0)
+      little-plugger (~> 1.1)
+      multi_json (~> 1.10)
     lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
@@ -324,7 +324,7 @@ GEM
     method_source (0.8.2)
     migratio (0.0.3)
       sidekiq
-    mime-types (2.4.3)
+    mime-types (2.5)
     mini_portile (0.6.2)
     minitest (5.6.0)
     multi_json (1.11.0)
@@ -453,7 +453,7 @@ GEM
     showdown-rails (0.0.4)
       actionpack (>= 3.1)
       railties (>= 3.1)
-    sidekiq (3.3.3)
+    sidekiq (3.3.4)
       celluloid (>= 0.16.0)
       connection_pool (>= 2.1.1)
       json
@@ -476,7 +476,7 @@ GEM
     spring (1.3.4)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
-    sprockets (3.0.1)
+    sprockets (3.0.2)
       rack (~> 1.0)
     sprockets-rails (2.2.4)
       actionpack (>= 3.0)
