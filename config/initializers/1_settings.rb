@@ -7,6 +7,10 @@ class Settings < Settingslogic
       to_header_key(mi_authentication_key)
     end
 
+    def header_project_key
+      to_header_key(project_key)
+    end
+
     private
 
     def to_header_key(key)
@@ -27,6 +31,7 @@ class Settings < Settingslogic
   Settings.metadata['remote_publish'] = false if Settings.metadata['remote_publish'].nil?
 
   Settings['mi_authentication_key']    ||= 'mi_ticket'
+  Settings['project_key'] ||= 'project'
 
   Settings['vph'] ||= Settingslogic.new({})
   Settings.vph['enabled'] = false if Settings.vph['enabled'].nil?
