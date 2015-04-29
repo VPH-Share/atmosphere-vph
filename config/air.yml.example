@@ -2,6 +2,8 @@
 defaults: &defaults
   vph:
     enabled: true
+    default_portal: 'portal'
+    host_base: 'https://vph-share.eu'
     host: 'https://portal.vph-share.eu'
     roles_map: {cloudadmin: 'admin', developer: 'developer'}
     ssl_verify: true

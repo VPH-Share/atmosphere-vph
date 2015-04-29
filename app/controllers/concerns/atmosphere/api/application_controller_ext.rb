@@ -5,6 +5,10 @@ module Atmosphere
     module ApplicationControllerExt
       extend ActiveSupport::Concern
 
+      included do
+        before_filter :set_project
+      end
+
       def delegate_auth
         current_user ? current_user.mi_ticket : nil
       end
@@ -24,6 +28,15 @@ module Atmosphere
         params[Devise::Strategies::TokenAuthenticatable.key].presence ||
           request.headers[Devise::Strategies::TokenAuthenticatable.header_key].
             presence
+      end
+
+      def set_project
+        current_user.project = project if current_user
+      end
+
+      def project
+        params[Air.config.project_key] ||
+          request.headers[Air.config.header_project_key]
       end
     end
   end

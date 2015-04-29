@@ -7,7 +7,8 @@ describe MiApplianceTypePdp do
   let(:current_user) { build(:user, mi_ticket: ticket) }
 
   before do
-    allow(Air.config.vph).to receive(:host).and_return('https://mi.host')
+    allow(Air.config.vph).to receive(:host_base).and_return('https://host')
+    allow(Air.config.vph).to receive(:default_project).and_return('mi')
     allow(Air.config.vph).to receive(:ssl_verify).and_return(false)
 
     allow(resource_access_class).to receive(:new)
@@ -105,18 +106,18 @@ describe MiApplianceTypePdp do
     end
   end
 
-  let!(:at1) { create(:appliance_type, visible_to: :all) }
-  let!(:at2) { create(:appliance_type, visible_to: :owner) }
-  let!(:at3) { create(:appliance_type, visible_to: :all) }
-  let!(:at4) do
-    create(:appliance_type,
-      visible_to: :developer,
-      author: current_user
-    )
-  end
-  let!(:at5) { create(:appliance_type, visible_to: :owner, author: current_user) }
-
   context 'when normal user' do
+    let!(:at1) { create(:appliance_type, visible_to: :all) }
+    let!(:at2) { create(:appliance_type, visible_to: :owner) }
+    let!(:at3) { create(:appliance_type, visible_to: :all) }
+    let!(:at4) do
+      create(:appliance_type,
+        visible_to: :developer,
+        author: current_user
+      )
+    end
+    let!(:at5) { create(:appliance_type, visible_to: :owner, author: current_user) }
+
     before do
       allow(resource_access).to receive(:availabe_resource_ids)
         .with(:Reader).and_return([at1.id, at2.id, at3.id, at4.id])
@@ -172,6 +173,26 @@ describe MiApplianceTypePdp do
       filtered_ats = subject.filter(Atmosphere::ApplianceType.all, :manage)
 
       expect(filtered_ats.size).to eq 5
+    end
+  end
+
+  context 'project specific pdp' do
+    it 'uses default pdp url when project not given' do
+      expect(resource_access_class).
+        to receive(:new).
+        with(anything, include(url: 'https://mi.host'))
+
+      MiApplianceTypePdp.new(current_user, resource_access_class)
+    end
+
+    it 'uses pdp url with prefix when project name is given' do
+      current_user.project = 'project'
+
+      expect(resource_access_class).
+        to receive(:new).
+        with(anything, include(url: 'https://project.host'))
+
+      MiApplianceTypePdp.new(current_user, resource_access_class)
     end
   end
 
