@@ -36,4 +36,7 @@ class Settings < Settingslogic
   Settings['vph'] ||= Settingslogic.new({})
   Settings.vph['enabled'] = false if Settings.vph['enabled'].nil?
   Settings.vph['ssl_verify'] = true if Settings.vph['ssl_verify'].nil?
+  Settings.vph['default_project'] ||= 'portal'
+  Settings.vph['host_base'] ||= 'https://vph-share.eu'
+  Settings.vph['host'] ||= 'https://portal.vph-share.eu'
 end

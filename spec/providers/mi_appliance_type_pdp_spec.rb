@@ -7,7 +7,8 @@ describe MiApplianceTypePdp do
   let(:current_user) { build(:user, mi_ticket: ticket) }
 
   before do
-    allow(Air.config.vph).to receive(:host).and_return('https://mi.host')
+    allow(Air.config.vph).to receive(:host_base).and_return('https://host')
+    allow(Air.config.vph).to receive(:default_project).and_return('mi')
     allow(Air.config.vph).to receive(:ssl_verify).and_return(false)
 
     allow(resource_access_class).to receive(:new)
@@ -179,18 +180,17 @@ describe MiApplianceTypePdp do
     it 'uses default pdp url when project not given' do
       expect(resource_access_class).
         to receive(:new).
-        with(anything, include(url: Air.config.vph.host))
+        with(anything, include(url: 'https://mi.host'))
 
       MiApplianceTypePdp.new(current_user, resource_access_class)
     end
 
     it 'uses pdp url with prefix when project name is given' do
-      allow(Air.config.vph).to receive(:host).and_return('https://localhost')
       current_user.project = 'project'
 
       expect(resource_access_class).
         to receive(:new).
-        with(anything, include(url: 'https://project.localhost'))
+        with(anything, include(url: 'https://project.host'))
 
       MiApplianceTypePdp.new(current_user, resource_access_class)
     end

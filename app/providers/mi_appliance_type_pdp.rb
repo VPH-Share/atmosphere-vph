@@ -79,12 +79,14 @@ class MiApplianceTypePdp
   private
 
   def mi_url
-    if @current_user.project.blank?
-      Air.config.vph.host
-    else
-      uri = URI(Air.config.vph.host)
-      "#{uri.scheme}://#{@current_user.project}.#{uri.host}"
-    end
+    project = if @current_user.project.blank?
+                Air.config.vph.default_project
+              else
+                @current_user.project
+              end
+
+    uri = URI(Air.config.vph.host_base)
+    "#{uri.scheme}://#{project}.#{uri.host}"
   end
 
   def can_perform_as?(at, role)
