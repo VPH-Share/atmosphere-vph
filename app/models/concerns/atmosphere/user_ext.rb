@@ -12,7 +12,7 @@ module Atmosphere::UserExt
 
     around_update :manage_metadata
 
-    attr_accessor :mi_ticket
+    attr_accessor :mi_ticket, :project
   end
 
   # METADATA lifecycle methods

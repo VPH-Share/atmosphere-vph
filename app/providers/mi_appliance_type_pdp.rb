@@ -24,7 +24,7 @@ class MiApplianceTypePdp
                           'AtomicService',
                           ticket: current_user.mi_ticket,
                           verify: Air.config.vph.ssl_verify,
-                          url: Air.config.vph.host
+                          url: mi_url
                         )
   end
 
@@ -77,6 +77,17 @@ class MiApplianceTypePdp
   end
 
   private
+
+  def mi_url
+    project = if @current_user.project.blank?
+                Air.config.vph.default_project
+              else
+                @current_user.project
+              end
+
+    uri = URI(Air.config.vph.host_base)
+    "#{uri.scheme}://#{project}.#{uri.host}"
+  end
 
   def can_perform_as?(at, role)
     show_all? || owner?(at) || role?(at, role)
