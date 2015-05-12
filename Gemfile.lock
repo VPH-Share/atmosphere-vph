@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: cc02b1138762f1485b7a4841daa7a58c0942f864
+  revision: a5bf5feb0ba0d81d3f7c2fbf9078a5ba317b8eac
   branch: master
   specs:
     atmosphere (0.0.1)
@@ -448,7 +448,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    sentry-raven (0.13.1)
+    sentry-raven (0.13.2)
       faraday (>= 0.7.6)
     settingslogic (2.0.9)
     sexp_processor (4.5.1)
