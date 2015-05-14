@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: cc02b1138762f1485b7a4841daa7a58c0942f864
+  revision: acb2c31eed7c3f319f7ddf605e5e6457487e1f83
   branch: stable
   specs:
     atmosphere (0.0.1)
