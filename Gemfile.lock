@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: a5bf5feb0ba0d81d3f7c2fbf9078a5ba317b8eac
+  revision: acb2c31eed7c3f319f7ddf605e5e6457487e1f83
   branch: master
   specs:
     atmosphere (0.0.1)
@@ -521,7 +521,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_cleaner
   factory_girl
-  ffaker
+  ffaker (~> 2.0.0)
   foreman
   guard-rspec
   jquery-rails
