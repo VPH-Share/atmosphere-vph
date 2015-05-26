@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: 262a655d0e5da56ef3e67bff9935136d488e5357
+  revision: d63b6e20da23a53d16d228b20a6ee7b535f4a805
   branch: rails_4.2
   specs:
     atmosphere (0.0.1)
@@ -45,7 +45,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 8469d2f759fcc8644b9bb7fa326dfa62d956992b
+  revision: 1626f4bbf7f9f8d6253a1dba332b5ef287d422ef
   branch: 4-2-stable
   specs:
     actionmailer (4.2.2.beta)
