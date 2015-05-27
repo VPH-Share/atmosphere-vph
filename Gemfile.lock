@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: d63b6e20da23a53d16d228b20a6ee7b535f4a805
-  branch: rails_4.2
+  revision: c831ff61e589124fcadd99791c97a9b21ae5f6f8
+  branch: master
   specs:
     atmosphere (0.0.1)
       active_model_serializers (~> 0.8.0)
@@ -45,7 +45,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 1626f4bbf7f9f8d6253a1dba332b5ef287d422ef
+  revision: cbd6fd200148ced93f3de607491348abe85bcde9
   branch: 4-2-stable
   specs:
     actionmailer (4.2.2.beta)
@@ -149,7 +149,7 @@ GEM
     connection_pool (2.2.0)
     database_cleaner (1.4.1)
     debug_inspector (0.0.2)
-    devise (3.5.0)
+    devise (3.5.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
