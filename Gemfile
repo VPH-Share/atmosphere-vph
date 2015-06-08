@@ -1,9 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'fog', path: '/home/tomek/work/atmosphere/src/fog'
-gem 'azure', '0.6.4'
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.10'
 # Use postgresql as the database for Active Record
@@ -25,9 +21,14 @@ gem 'turbolinks'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem 'azure',
+    github: 'Azure/azure-sdk-for-ruby',
+    branch: 'master',
+    ref: 'e61400c9b8f184da74a1723495b503340218c637'
+
 gem 'atmosphere',
     github: 'dice-cyfronet/atmosphere',
-    branch: 'azure-new-fog'
+    branch: 'azure-1-june'
 
 gem 'active_model_serializers', '0.8.1'
 
