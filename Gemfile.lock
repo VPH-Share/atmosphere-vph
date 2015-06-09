@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: 8964a77fb5d522f4b149812f5e4400fcf374e3da
+  revision: 4f4196fa0252fcec68554c9757bd06a23ecdc96b
   branch: azure-1-june
   specs:
     atmosphere (0.0.1)
@@ -223,7 +223,7 @@ GEM
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
-    fog-profitbricks (0.0.2)
+    fog-profitbricks (0.0.3)
       fog-core
       fog-xml
       nokogiri
@@ -308,7 +308,7 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
-    hashie (3.4.1)
+    hashie (3.4.2)
     highcharts-rails (4.0.4.1)
       railties (>= 3.1)
     hitimes (1.2.2)
@@ -486,11 +486,11 @@ GEM
       json
       redis (>= 3.0.6)
       redis-namespace (>= 1.3.1)
-    signet (0.6.0)
+    signet (0.6.1)
       addressable (~> 2.3)
       extlib (~> 0.9)
       faraday (~> 0.9)
-      jwt (~> 1.0)
+      jwt (~> 1.5)
       multi_json (~> 1.10)
     simple_form (3.1.0)
       actionpack (~> 4.0)
@@ -503,7 +503,7 @@ GEM
     spring (1.3.6)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
-    sprockets (3.1.0)
+    sprockets (3.2.0)
       rack (~> 1.0)
     sprockets-rails (2.3.1)
       actionpack (>= 3.0)
