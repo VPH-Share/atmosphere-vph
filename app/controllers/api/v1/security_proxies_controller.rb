@@ -23,7 +23,7 @@ module Api
 
       def update
         log_user_action "update security proxy #{@security_proxy.id} with following params #{params}"
-        @security_proxy.update_attributes!(params[:security_proxy])
+        @security_proxy.update_attributes!(security_proxy_params)
         render json: @security_proxy, serializer: SecurityProxySerializer
         log_user_action "security proxy updated: #{@security_proxy.to_json}"
       end

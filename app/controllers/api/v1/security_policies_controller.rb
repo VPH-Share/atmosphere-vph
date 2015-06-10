@@ -23,7 +23,7 @@ module Api
 
       def update
         log_user_action "update security policy #{@security_policy.id} with following params #{params}"
-        @security_policy.update_attributes!(params[:security_policy])
+        @security_policy.update_attributes!(security_policy_params)
         render json: @security_policy
         log_user_action "security policy updated: #{@security_policy.to_json}"
       end

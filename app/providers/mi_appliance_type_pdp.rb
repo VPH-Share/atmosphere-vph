@@ -79,7 +79,7 @@ class MiApplianceTypePdp
   private
 
   def mi_url
-    project = if @current_user.project.blank?
+    project = if @current_user.project.blank? || @current_user.project == 'None'
                 Air.config.vph.default_project
               else
                 @current_user.project

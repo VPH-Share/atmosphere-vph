@@ -70,7 +70,7 @@ module OwnedPayloadTests
     describe "POST /owned_payload_path" do
       context 'when unauthenticated' do
         it 'returns 401 authentication error' do
-          post api("/#{owned_payload_path}")
+          post api("/#{owned_payload_path}"), new_owned_payload
           expect(response.status).to eq 401
         end
       end

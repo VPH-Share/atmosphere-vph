@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', github: 'rails/rails', branch: '4-2-stable'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -30,7 +31,7 @@ gem 'atmosphere',
     github: 'dice-cyfronet/atmosphere',
     branch: 'azure-1-june'
 
-gem 'active_model_serializers', '0.8.1'
+# gem 'active_model_serializers', '0.8.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -78,7 +79,7 @@ group :test do
   gem 'shoulda-matchers'
 
   gem 'factory_girl'
-  gem 'ffaker'
+  gem 'ffaker', '~>2.0.0'
   gem 'database_cleaner'
 end
 
