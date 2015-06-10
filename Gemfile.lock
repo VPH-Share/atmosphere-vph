@@ -2,10 +2,6 @@ GIT
   remote: git://github.com/Azure/azure-sdk-for-ruby.git
   revision: e61400c9b8f184da74a1723495b503340218c637
   ref: e61400c9b8f184da74a1723495b503340218c637
-
-GIT
-  remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: c831ff61e589124fcadd99791c97a9b21ae5f6f8
   branch: master
   specs:
     azure (0.7.0.pre)
