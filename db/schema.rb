@@ -364,7 +364,6 @@ ActiveRecord::Schema.define(version: 20150410124111) do
 
   add_index "security_proxies", ["name"], name: "index_security_proxies_on_name", unique: true, using: :btree
 
-  Foreigner.load
   add_foreign_key "atmosphere_appliance_configuration_instances", "atmosphere_appliance_configuration_templates", name: "ac_instances_ac_template_id_fk", column: "appliance_configuration_template_id"
 
   add_foreign_key "atmosphere_appliance_configuration_templates", "atmosphere_appliance_types", name: "atmo_config_templates_at_id_fk", column: "appliance_type_id"
