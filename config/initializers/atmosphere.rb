@@ -9,6 +9,14 @@ Atmosphere.setup do |config|
 
   config.ability_class = 'Ability'
 
+  if Settings['azure_vm_password']
+    config.azure_vm_password = Settings.azure_vm_password
+  end
+
+  if Settings['azure_vm_user']
+    config.azure_vm_user = Settings.azure_vm_user
+  end
+
   if Settings['at_pdp']
     config.at_pdp_class = Settings.at_pdp.constantize
   end

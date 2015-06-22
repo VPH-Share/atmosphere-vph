@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', github: 'rails/rails', branch: '4-2-stable'
 
@@ -22,6 +21,11 @@ gem 'turbolinks'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
+
+gem 'azure',
+    github: 'Azure/azure-sdk-for-ruby',
+    branch: 'master',
+    ref: 'e61400c9b8f184da74a1723495b503340218c637'
 
 gem 'atmosphere',
     github: 'dice-cyfronet/atmosphere',
