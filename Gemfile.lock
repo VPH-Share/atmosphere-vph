@@ -1,20 +1,35 @@
 GIT
+  remote: git://github.com/Azure/azure-sdk-for-ruby.git
+  revision: e61400c9b8f184da74a1723495b503340218c637
+  ref: e61400c9b8f184da74a1723495b503340218c637
+  branch: master
+  specs:
+    azure (0.7.0.pre)
+      json (~> 1.8)
+      mime-types (~> 2.0)
+      nokogiri (~> 1.6)
+      systemu (~> 2.6)
+      thor (~> 0.19)
+      uuid (~> 2.0)
+
+GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
   revision: c831ff61e589124fcadd99791c97a9b21ae5f6f8
   branch: stable
   specs:
     atmosphere (0.0.1)
       active_model_serializers (~> 0.8.0)
+      azure (= 0.7.0.pre)
       bootstrap-sass (~> 3.2)
       cancancan
       clockwork
       coffee-rails (~> 4.1.0)
-      devise (~> 3.2)
+      devise (~> 3.4)
       draper (~> 1.3)
       enumerize
       fog
+      fog-azure
       font-awesome-sass (~> 4.2.0)
-      foreigner
       github-markup
       google-api-client
       gravtastic
@@ -45,58 +60,58 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: d68e7b095ba49a313443c08de4f5bb6c745febd0
+  revision: 9ab2d030209d9608a6c866d83210f5b3b7d2319e
   branch: 4-2-stable
   specs:
-    actionmailer (4.2.2.beta)
-      actionpack (= 4.2.2.beta)
-      actionview (= 4.2.2.beta)
-      activejob (= 4.2.2.beta)
+    actionmailer (4.2.2)
+      actionpack (= 4.2.2)
+      actionview (= 4.2.2)
+      activejob (= 4.2.2)
       mail (~> 2.5, >= 2.5.4)
       rails-dom-testing (~> 1.0, >= 1.0.5)
-    actionpack (4.2.2.beta)
-      actionview (= 4.2.2.beta)
-      activesupport (= 4.2.2.beta)
+    actionpack (4.2.2)
+      actionview (= 4.2.2)
+      activesupport (= 4.2.2)
       rack (~> 1.6)
       rack-test (~> 0.6.2)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    actionview (4.2.2.beta)
-      activesupport (= 4.2.2.beta)
+    actionview (4.2.2)
+      activesupport (= 4.2.2)
       builder (~> 3.1)
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    activejob (4.2.2.beta)
-      activesupport (= 4.2.2.beta)
+    activejob (4.2.2)
+      activesupport (= 4.2.2)
       globalid (>= 0.3.0)
-    activemodel (4.2.2.beta)
-      activesupport (= 4.2.2.beta)
+    activemodel (4.2.2)
+      activesupport (= 4.2.2)
       builder (~> 3.1)
-    activerecord (4.2.2.beta)
-      activemodel (= 4.2.2.beta)
-      activesupport (= 4.2.2.beta)
+    activerecord (4.2.2)
+      activemodel (= 4.2.2)
+      activesupport (= 4.2.2)
       arel (~> 6.0)
-    activesupport (4.2.2.beta)
+    activesupport (4.2.2)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    rails (4.2.2.beta)
-      actionmailer (= 4.2.2.beta)
-      actionpack (= 4.2.2.beta)
-      actionview (= 4.2.2.beta)
-      activejob (= 4.2.2.beta)
-      activemodel (= 4.2.2.beta)
-      activerecord (= 4.2.2.beta)
-      activesupport (= 4.2.2.beta)
+    rails (4.2.2)
+      actionmailer (= 4.2.2)
+      actionpack (= 4.2.2)
+      actionview (= 4.2.2)
+      activejob (= 4.2.2)
+      activemodel (= 4.2.2)
+      activerecord (= 4.2.2)
+      activesupport (= 4.2.2)
       bundler (>= 1.3.0, < 2.0)
-      railties (= 4.2.2.beta)
+      railties (= 4.2.2)
       sprockets-rails
-    railties (4.2.2.beta)
-      actionpack (= 4.2.2.beta)
-      activesupport (= 4.2.2.beta)
+    railties (4.2.2)
+      actionpack (= 4.2.2)
+      activesupport (= 4.2.2)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
 
@@ -115,7 +130,7 @@ GEM
       addressable (>= 2.3.1)
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
-    autoprefixer-rails (5.2.0)
+    autoprefixer-rails (5.2.1)
       execjs
       json
     bcrypt (3.1.10)
@@ -125,11 +140,11 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.4.1)
+    bootstrap-sass (3.3.5)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.2.2)
-    cancancan (1.10.1)
+    cancancan (1.11.0)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     clockwork (1.2.0)
@@ -202,23 +217,27 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (0.4.0)
+    fog-aws (0.5.0)
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
+    fog-azure (0.0.1)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
     fog-brightbox (0.7.1)
       fog-core (~> 1.22)
       fog-json
       inflecto (~> 0.0.2)
-    fog-core (1.30.0)
+    fog-core (1.31.1)
       builder
       excon (~> 0.45)
       formatador (~> 0.2)
       mime-types
       net-scp (~> 1.1)
       net-ssh (>= 2.1.3)
-    fog-ecloud (0.1.1)
+    fog-ecloud (0.1.3)
       fog-core
       fog-xml
     fog-google (0.0.5)
@@ -234,7 +253,7 @@ GEM
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
-    fog-profitbricks (0.0.2)
+    fog-profitbricks (0.0.3)
       fog-core
       fog-xml
       nokogiri
@@ -272,31 +291,21 @@ GEM
       nokogiri (~> 1.5, >= 1.5.11)
     font-awesome-sass (4.2.2)
       sass (~> 3.2)
-    foreigner (1.7.4)
-      activerecord (>= 3.0.0)
     foreman (0.78.0)
       thor (~> 0.19.1)
     formatador (0.2.5)
     github-markup (1.3.3)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
-    google-api-client (0.8.6)
+    google-api-client (0.8.2)
       activesupport (>= 3.2)
       addressable (~> 2.3)
       autoparse (~> 0.3)
       extlib (~> 0.9)
       faraday (~> 0.9)
-      googleauth (~> 0.3)
       launchy (~> 2.4)
       multi_json (~> 1.10)
       retriable (~> 1.4)
-      signet (~> 0.6)
-    googleauth (0.4.1)
-      faraday (~> 0.9)
-      jwt (~> 1.4)
-      logging (~> 2.0)
-      memoist (~> 0.12)
-      multi_json (= 1.11)
       signet (~> 0.6)
     gravtastic (3.2.6)
     guard (2.12.5)
@@ -309,7 +318,7 @@ GEM
       shellany (~> 0.0)
       thor (>= 0.18.1)
     guard-compat (1.2.1)
-    guard-rspec (4.5.0)
+    guard-rspec (4.5.1)
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
@@ -335,7 +344,7 @@ GEM
     influxdb (0.1.8)
       json
     ipaddress (0.8.0)
-    jquery-rails (4.0.3)
+    jquery-rails (4.0.4)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
@@ -352,23 +361,20 @@ GEM
       celluloid (~> 0.16.0)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
-    little-plugger (1.1.3)
-    logging (2.0.0)
-      little-plugger (~> 1.1)
-      multi_json (~> 1.10)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.9)
+    macaddr (1.7.1)
+      systemu (~> 2.6.2)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    memoist (0.12.0)
     method_source (0.8.2)
     migratio (0.0.3)
       sidekiq
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.7.0)
-    multi_json (1.11.0)
+    multi_json (1.11.1)
     multipart-post (2.0.0)
     nenv (0.2.0)
     net-scp (1.2.1)
@@ -400,7 +406,7 @@ GEM
       rack (>= 1.1, < 2.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
-    rack (1.6.1)
+    rack (1.6.4)
     rack-cors (0.4.0)
     rack-protection (1.5.3)
       rack
@@ -428,8 +434,7 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     rdoc (4.2.0)
-      json (~> 1.4)
-    redcarpet (3.3.0)
+    redcarpet (3.3.2)
     redirus (0.1.2)
       sidekiq
     redis (3.2.1)
@@ -488,17 +493,17 @@ GEM
     showdown-rails (0.0.4)
       actionpack (>= 3.1)
       railties (>= 3.1)
-    sidekiq (3.3.4)
-      celluloid (>= 0.16.0)
+    sidekiq (3.4.1)
+      celluloid (~> 0.16.0)
       connection_pool (>= 2.1.1)
       json
       redis (>= 3.0.6)
       redis-namespace (>= 1.3.1)
-    signet (0.6.0)
+    signet (0.6.1)
       addressable (~> 2.3)
       extlib (~> 0.9)
       faraday (~> 0.9)
-      jwt (~> 1.0)
+      jwt (~> 1.5)
       multi_json (~> 1.10)
     simple_form (3.1.0)
       actionpack (~> 4.0)
@@ -517,6 +522,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    systemu (2.6.5)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -532,6 +538,8 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
+    uuid (2.3.8)
+      macaddr (~> 1.0)
     warden (1.2.3)
       rack (>= 1.0)
     will_paginate (3.0.7)
@@ -544,6 +552,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   atmosphere!
+  azure!
   better_errors
   binding_of_caller
   clockwork

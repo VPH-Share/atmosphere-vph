@@ -16,3 +16,7 @@
 # Ignore all logfiles and tempfiles.
 /log
 /tmp
+
+# Ignore Azure cert
+/config/Azure-USFD.pem
+

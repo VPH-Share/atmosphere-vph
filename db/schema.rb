@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150410124111) do
     t.string   "action_type"
     t.integer  "appliance_id"
     t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "atmosphere_actions", ["appliance_id"], name: "index_atmosphere_actions_on_appliance_id", using: :btree
@@ -147,8 +148,8 @@ ActiveRecord::Schema.define(version: 20150410124111) do
   create_table "atmosphere_deployments", force: true do |t|
     t.integer  "virtual_machine_id"
     t.integer  "appliance_id"
-    t.string   "billing_state",      default: "prepaid", null: false
-    t.datetime "prepaid_until",      default: "now()",   null: false
+    t.string   "billing_state",      default: "prepaid",             null: false
+    t.datetime "prepaid_until",      default: '2015-03-24 10:57:56', null: false
   end
 
   create_table "atmosphere_dev_mode_property_sets", force: true do |t|
@@ -363,7 +364,6 @@ ActiveRecord::Schema.define(version: 20150410124111) do
 
   add_index "security_proxies", ["name"], name: "index_security_proxies_on_name", unique: true, using: :btree
 
-  Foreigner.load
   add_foreign_key "atmosphere_appliance_configuration_instances", "atmosphere_appliance_configuration_templates", name: "ac_instances_ac_template_id_fk", column: "appliance_configuration_template_id"
 
   add_foreign_key "atmosphere_appliance_configuration_templates", "atmosphere_appliance_types", name: "atmo_config_templates_at_id_fk", column: "appliance_type_id"
