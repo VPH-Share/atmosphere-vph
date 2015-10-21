@@ -50,6 +50,9 @@ gem 'omniauth-vph'
 # Cross-Origin Resource Scharing for external UIs
 gem 'rack-cors', :require => 'rack/cors'
 
+# to follow mi pdp redirects
+gem 'faraday_middleware'
+
 group :development do
   gem 'annotate'
   gem 'quiet_assets'
