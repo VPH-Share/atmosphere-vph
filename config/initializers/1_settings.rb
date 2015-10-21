@@ -26,7 +26,7 @@ class Settings < Settingslogic
 
   # Default config values for MetadataRegistry setup
   Settings['metadata'] ||= Settingslogic.new({})
-  Settings.metadata['registry_endpoint'] = 'http://vphshare.atosresearch.eu/metadata-extended/rest/metadata/' if Settings.metadata['registry_endpoint'].nil?
+  Settings.metadata['registry_endpoint'] = 'http://vphsharemdr.shef.ac.uk/metadata-extended/rest/metadata/' if Settings.metadata['registry_endpoint'].nil?
   Settings.metadata['remote_connect'] = false if Settings.metadata['remote_connect'].nil?
   Settings.metadata['remote_publish'] = false if Settings.metadata['remote_publish'].nil?
 
