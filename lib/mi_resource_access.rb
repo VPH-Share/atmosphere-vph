@@ -32,11 +32,14 @@ class MiResourceAccess
     verify = options[:verify]
     ticket = options[:ticket]
 
-    Faraday.new(url: url, :ssl => {:verify => verify}) do |faraday|
+    Faraday.new(url: url, ssl: { verify: verify }) do |faraday|
       faraday.request :url_encoded
       faraday.response :logger
-      faraday.adapter Faraday.default_adapter
       faraday.basic_auth('', ticket)
+
+      faraday.use FaradayMiddleware::FollowRedirects
+      # remember that adapter need to be defined AFTER middleware
+      faraday.adapter Faraday.default_adapter
     end
   end
 end
