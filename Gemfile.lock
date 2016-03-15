@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: 6a3649e212e66559250b113bc3c8176d0b5750f1
-  branch: remove-azure-google
+  revision: ef0f578f1e67d18085ba236be2a8c7d4c5c1555e
+  branch: master
   specs:
     atmosphere (0.0.1)
       active_model_serializers (~> 0.8.0)
@@ -13,6 +13,7 @@ GIT
       enumerize (~> 1.1.0)
       fog (~> 1.37.0)
       font-awesome-sass (~> 4.2.0)
+      github-markup
       gravtastic
       haml-rails
       highcharts-rails (~> 4.0.4)
@@ -24,6 +25,7 @@ GIT
       omniauth
       pg (~> 0.18.3)
       rails (~> 4.2.5)
+      redcarpet
       redirus (~> 0.1.1)
       role_model
       sass-rails
@@ -254,6 +256,7 @@ GEM
     foreman (0.78.0)
       thor (~> 0.19.1)
     formatador (0.2.5)
+    github-markup (1.4.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     gravtastic (3.2.6)
@@ -398,6 +401,7 @@ GEM
       nokogiri (>= 1.4.1)
       trollop
     rdoc (4.2.0)
+    redcarpet (3.3.4)
     redirus (0.1.2)
       sidekiq
     redis (3.2.2)
