@@ -51,6 +51,9 @@ gem 'faraday_middleware'
 # Read settings from air.yml
 gem 'settingslogic'
 
+# Namespace support for sidekiq
+gem 'redis-namespace'
+
 group :development do
   gem 'annotate'
   gem 'quiet_assets'
