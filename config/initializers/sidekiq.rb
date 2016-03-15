@@ -5,7 +5,7 @@ sidekiq_connection = {
 
 Sidekiq.configure_server do |config|
   config.redis = sidekiq_connection
-  config.poll_interval = 1
+  config.average_scheduled_poll_interval = 1
 end
 
 Sidekiq.configure_client do |config|

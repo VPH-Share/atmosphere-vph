@@ -22,14 +22,9 @@ gem 'turbolinks'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'azure',
-    github: 'Azure/azure-sdk-for-ruby',
-    branch: 'master',
-    ref: 'e61400c9b8f184da74a1723495b503340218c637'
-
 gem 'atmosphere',
     github: 'dice-cyfronet/atmosphere',
-    branch: 'master'
+    branch: 'remove-azure-google'
 
 # gem 'active_model_serializers', '0.8.1'
 
@@ -52,6 +47,9 @@ gem 'rack-cors', :require => 'rack/cors'
 
 # to follow mi pdp redirects
 gem 'faraday_middleware'
+
+# Read settings from air.yml
+gem 'settingslogic'
 
 group :development do
   gem 'annotate'
