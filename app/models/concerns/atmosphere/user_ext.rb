@@ -3,6 +3,7 @@ module Atmosphere::UserExt
 
   included do
     include Atmosphere::TokenAuthenticatable
+#    include Atmosphere::JwtAuthenticatable
 
     has_and_belongs_to_many :security_proxies,
       class_name: '::SecurityProxy'
@@ -12,7 +13,7 @@ module Atmosphere::UserExt
 
     around_update :manage_metadata
 
-    attr_accessor :mi_ticket, :project
+    attr_accessor :mi_ticket, :jwt_token, :project
   end
 
   # METADATA lifecycle methods
@@ -45,5 +46,8 @@ module Atmosphere::UserExt
 
       user
     end
+
+
+
   end
 end
