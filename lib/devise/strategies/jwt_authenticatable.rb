@@ -92,7 +92,6 @@ module Devise
 #        JWT.decode(token, Application.config.jwt.key, true,
 #                   algorithm: Application.config.jwt.key_algorithm)
       end
-
     end
   end
 end
