@@ -47,6 +47,38 @@ module Atmosphere::UserExt
       user
     end
 
+    def jwt_find_or_create(auth)
+
+      Rails.logger.debug("Proceeding with auth: #{auth.inspect} of class #{auth.class.to_s}")
+
+      Rails.logger.debug("Searching for email: #{auth['email']}")
+
+      user = find_by(email: auth['email'])
+
+      if user.blank?
+
+        Rails.logger.debug("User not found.")
+
+        user = new
+        user.generate_password
+      else
+        Rails.logger.debug("User found: #{user.inspect}")
+      end
+
+      user.login = auth['email']
+      user.email = auth['email']
+      user.full_name = auth['name']
+
+      Rails.logger.debug("Saving user...")
+
+
+      user.save
+
+      Rails.logger.debug("User has errors: #{user.errors.inspect}")
+
+      user
+    end
+
 
 
   end

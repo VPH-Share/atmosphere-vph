@@ -27,7 +27,6 @@ module Devise
 #        return fail(:invalid_token) unless jwt_token
 
 
-
         # TODO: Check if token is valid
         Rails.logger.debug("Checking if token is valid...")
         return fail(:invalid_token) if @token.blank? # Is a more sophisticated check required here?
@@ -61,9 +60,19 @@ module Devise
 
         # TODO: For testing, generate a pair of JWT keys, sign/validate tokens locally
 
-        resource = User.from_token(token)
+        Rails.logger.debug("Attempting to authenticate...")
+
+        resource = Atmosphere::User.jwt_find_or_create(decoded_token.first)
+
+        Rails.logger.debug("Have user: #{resource.inspect}")
+
+        # TODO: Implement sudoability for JWT authenticated users
+        # resource = sudo!(resource, sudo_as) if sudo_as
 
         # TODO: Run this here for sudo>> resource = sudo!(resource, sudo_as) if sudo_as
+
+        Rails.logger.debug("Have user (post sudo): #{resource.inspect}")
+
 
         resource ? success!(resource) : fail(:invalid_credentials)
 
