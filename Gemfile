@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~>4.2.3'
+gem 'rails', '~>4.2'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -10,7 +10,7 @@ gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.2.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -83,7 +83,7 @@ group :test do
   gem 'shoulda-matchers'
 
   gem 'factory_girl'
-  gem 'ffaker', '~>2.0.0'
+  gem 'ffaker', '~>2.3.0'
   gem 'database_cleaner'
 end
 

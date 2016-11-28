@@ -1,7 +1,7 @@
 language: ruby
 
 rvm:
-  - 2.2.1
+  - 2.3.1
 
 script:
   - bundle exec rake db:schema:load
@@ -12,3 +12,4 @@ before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
   - cp config/air.yml.example config/air.yml
+

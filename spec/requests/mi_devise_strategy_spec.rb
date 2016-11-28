@@ -66,7 +66,7 @@ describe Devise::Strategies::MiTokenAuthenticatable do
     get api("/appliance_sets?mi_ticket=#{valid_mi_token}&sudo=other_user")
 
     expect(response.status).to eq 403
-    expect(json_response['error']).to eq 'Must be admin to use sudo'
+    expect(json_response['message']).to eq 'Must be admin to use sudo'
   end
 
   it 'return 404 when user for sudo not found' do
@@ -75,7 +75,7 @@ describe Devise::Strategies::MiTokenAuthenticatable do
     get api("/appliance_sets?mi_ticket=#{valid_mi_token}&sudo=other_user")
 
     expect(response.status).to eq 404
-    expect(json_response['error']).to eq 'No user login for: other_user'
+    expect(json_response['message']).to eq 'User you want to sudo does not exist'
   end
 
   def login_as(*roles)
