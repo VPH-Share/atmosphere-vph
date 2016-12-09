@@ -15,8 +15,8 @@ describe Atmosphere::Api::V1::AppliancesController do
         }
       }
 
-      put api("/dev_mode_property_sets/#{appl.dev_mode_property_set.id}",
-                developer), update_params
+      put api("/dev_mode_property_sets/#{appl.dev_mode_property_set.id}", developer),
+          params: update_params
       appl.reload
 
       expect(response.status).to eq 200

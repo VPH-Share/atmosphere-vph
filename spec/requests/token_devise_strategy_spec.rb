@@ -16,7 +16,7 @@ describe Devise::Strategies::TokenAuthenticatable do
   it 'authenticate with valid master interface token key and value through header' do
     login_as('admin', 'developer')
 
-    get api('/appliance_sets'), nil, {'PRIVATE-TOKEN' => valid_token}
+    get api('/appliance_sets'), headers: {'PRIVATE-TOKEN' => valid_token}
 
     expect(response.status).to eq 200
   end
