@@ -39,7 +39,7 @@ module Api
       end
 
       def payload
-        render text: @security_policy.payload
+        render plain: @security_policy.payload
       end
 
       private
