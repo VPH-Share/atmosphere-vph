@@ -3,8 +3,8 @@ class Api::V1::ApplianceEndpointsController < Atmosphere::Api::ApplicationContro
     parent: false,
     class: 'Atmosphere::ApplianceType'
 
-  before_filter :set_filter
-  before_filter :limit_appliance_types
+  before_action :set_filter
+  before_action :limit_appliance_types
 
   def index
     endpoint_types = params[:endpoint_type].to_s.split(',')
