@@ -10,6 +10,8 @@ development:
 
 test:
   <<: *defaults
+  jwt:
+    key: <%= Rails.root.join('config', 'jwt', 'test.pem') %>
 
 production:
   <<: *defaults

@@ -12,8 +12,6 @@ module Devise
       def authenticate!
         Rails.logger.debug("Attempting to authenticate with JWT")
 
-
-
         # TODO: Run vapor over http and use admin:admin123 to log in
 
         # TODO: Scrub header for JWT (read up on jwt.io - invocation standard) - implemented here as bearer_token
@@ -96,7 +94,12 @@ module Devise
         algorithm = Vphshare::Application.config.jwt.key_algorithm
         key = Vphshare::Application.config.jwt.key
 
-        JWT.decode(token, key, true, algorithm: algorithm)
+        begin
+          JWT.decode(token, key, true, algorithm: algorithm)
+        rescue Exception => e
+          Rails.logger.error("Error decoding token: #{e.message}")
+        end
+
 
 #        JWT.decode(token, Application.config.jwt.key, true,
 #                   algorithm: Application.config.jwt.key_algorithm)
