@@ -1,4 +1,4 @@
-= form_tag(atmosphere.user_omniauth_callback_path(:vphticket), id: 'new_vph_ticket_user' ) do
+= form_tag(atmosphere.user_vphticket_omniauth_callback_path, id: 'new_vph_ticket_user' ) do
   = password_field_tag :ticket, nil, {class: 'form-control', placeholder: t('devise.ticket')}
 
   - if devise_mapping.rememberable?
