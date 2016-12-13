@@ -19,5 +19,7 @@ Devise.setup do |config|
     strategies.each do |strategy|
       manager.default_strategies(:scope => :user).unshift strategy
     end
+
+    puts "Devise strategies: #{manager.default_strategies(scope: :user)}"
   end
 end
