@@ -32,7 +32,7 @@ describe Devise::Strategies::MiTokenAuthenticatable do
   it 'authenticate with valid master interface token key and value through header' do
     login_as('admin', 'developer')
 
-    get api('/appliance_sets'), nil, {'MI-TICKET' => valid_mi_token}
+    get api('/appliance_sets'), headers: {'MI-TICKET' => valid_mi_token}
 
     expect(response.status).to eq 200
   end

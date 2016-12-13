@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~>4.2'
+gem 'rails', '~>5.0.0.1'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 3.0.4'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.2.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -56,7 +56,6 @@ gem 'redis-namespace'
 
 group :development do
   gem 'annotate'
-  gem 'quiet_assets'
   gem 'letter_opener'
   # gem 'rack-mini-profiler'
 

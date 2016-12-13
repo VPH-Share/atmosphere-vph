@@ -14,7 +14,7 @@ describe Atmosphere::Api::V1::ApplianceTypesController do
         }
       }
 
-      put api("/appliance_types/#{at.id}", user), msg
+      put api("/appliance_types/#{at.id}", user), params: msg
       at.reload
 
       expect(at.security_proxy).to eq sec_proxy

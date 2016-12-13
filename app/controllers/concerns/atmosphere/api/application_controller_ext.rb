@@ -6,7 +6,7 @@ module Atmosphere
       extend ActiveSupport::Concern
 
       included do
-        before_filter :set_project
+        before_action :set_project
       end
 
       def delegate_auth
