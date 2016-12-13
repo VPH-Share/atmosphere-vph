@@ -1,7 +1,7 @@
 module Api
   module V1
     class SecurityPoliciesController < Atmosphere::Api::ApplicationController
-      before_filter :find_by_name, only: :payload
+      before_action :find_by_name, only: :payload
       load_and_authorize_resource :security_policy
 
       respond_to :json
@@ -39,7 +39,7 @@ module Api
       end
 
       def payload
-        render text: @security_policy.payload
+        render plain: @security_policy.payload
       end
 
       private
