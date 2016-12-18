@@ -6,13 +6,13 @@ module Devise
   module Strategies
     class JwtAuthenticatable < Authenticatable
       def valid?
-        super || token # Why super? Should always return false
+        token
       end
 
       def authenticate!
         Rails.logger.debug("Authenticating with JWT.")
-        return fail(:invalid_token) if @token.blank? # Is a more sophisticated check required here?
-        decoded_token = token_data(@token)
+        return fail(:invalid_token) if token.blank? # Is a more sophisticated check required here?
+        decoded_token = token_data(token)
         resource = Atmosphere::User.jwt_find_or_create(decoded_token.first)
         resource ? success!(resource) : fail(:invalid_credentials)
       rescue
