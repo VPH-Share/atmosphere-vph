@@ -11,7 +11,7 @@ module Devise
 
       def authenticate!
         Rails.logger.debug("Authenticating with JWT.")
-        return fail(:invalid_token) if token.blank? # Is a more sophisticated check required here?
+        return fail(:invalid_token) if token.blank?
         decoded_token = token_data(token)
         resource = Atmosphere::User.jwt_find_or_create(decoded_token.first)
         resource ? success!(resource) : fail(:invalid_credentials)
