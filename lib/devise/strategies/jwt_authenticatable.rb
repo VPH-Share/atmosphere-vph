@@ -33,12 +33,24 @@ module Devise
 
       def token_data(token)
         algorithm = Vphshare::Application.config.jwt.key_algorithm
-        key = Vphshare::Application.config.jwt.key
+        keys = Vphshare::Application.config.jwt.keys
 
-        begin
-          JWT.decode(token, key, true, algorithm: algorithm)
-        rescue Exception => e
-          Rails.logger.error("Error decoding token: #{e.message}")
+        keys.each do |key|
+          decoded_token = nil
+          begin
+            decoded_token = JWT.decode(token, key, true, algorithm: algorithm)
+          rescue Exception => e
+            Rails.logger.warn("Error decoding token: #{e.message}. Trying next key...")
+            next
+          ensure
+            Rails.logger.debug("Finished token decoding attempt with key #{key.to_s}")
+          end
+          if decoded_token
+            Rails.logger.debug("Token decoded successfully.")
+            return decoded_token
+          else
+            Rails.lgger.warn("Unable to decode token - no matching keys available.")
+          end
         end
       end
     end
