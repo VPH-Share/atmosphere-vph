@@ -12,14 +12,4 @@ Atmosphere.setup do |config|
   if Settings['at_pdp']
     config.at_pdp_class = Settings.at_pdp.constantize
   end
-
-  if Settings['zabbix']
-    config.monitoring_client = Atmosphere::Monitoring::ZabbixClient.new
-  end
-
-  if Settings['influxdb']
-    config.metrics_store = Atmosphere::CachedDelegator.new(60.minutes) do
-      Atmosphere::Monitoring::InfluxdbMetricsStore.new(Settings['influxdb'])
-    end
-  end
 end

@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821055554) do
+ActiveRecord::Schema.define(version: 20161214130933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,26 +21,23 @@ ActiveRecord::Schema.define(version: 20150821055554) do
     t.integer  "action_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["action_id"], name: "index_atmosphere_action_logs_on_action_id", using: :btree
   end
-
-  add_index "atmosphere_action_logs", ["action_id"], name: "index_atmosphere_action_logs_on_action_id", using: :btree
 
   create_table "atmosphere_actions", force: :cascade do |t|
     t.string   "action_type"
     t.integer  "appliance_id"
     t.datetime "created_at"
+    t.index ["appliance_id"], name: "index_atmosphere_actions_on_appliance_id", using: :btree
   end
-
-  add_index "atmosphere_actions", ["appliance_id"], name: "index_atmosphere_actions_on_appliance_id", using: :btree
 
   create_table "atmosphere_appliance_configuration_instances", force: :cascade do |t|
     t.text     "payload"
     t.integer  "appliance_configuration_template_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["appliance_configuration_template_id"], name: "index_ac_instance_on_ac_template_id", using: :btree
   end
-
-  add_index "atmosphere_appliance_configuration_instances", ["appliance_configuration_template_id"], name: "index_ac_instance_on_ac_template_id", using: :btree
 
   create_table "atmosphere_appliance_configuration_templates", force: :cascade do |t|
     t.string   "name",              null: false
@@ -49,9 +45,8 @@ ActiveRecord::Schema.define(version: 20150821055554) do
     t.integer  "appliance_type_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["appliance_type_id"], name: "atmo_act_appliance_type_id_ix", using: :btree
   end
-
-  add_index "atmosphere_appliance_configuration_templates", ["appliance_type_id"], name: "atmo_act_appliance_type_id_ix", using: :btree
 
   create_table "atmosphere_appliance_sets", force: :cascade do |t|
     t.string   "name"
@@ -61,9 +56,8 @@ ActiveRecord::Schema.define(version: 20150821055554) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "optimization_policy"
+    t.index ["user_id"], name: "index_atmosphere_appliance_sets_on_user_id", using: :btree
   end
-
-  add_index "atmosphere_appliance_sets", ["user_id"], name: "index_atmosphere_appliance_sets_on_user_id", using: :btree
 
   create_table "atmosphere_appliance_tenants", force: :cascade do |t|
     t.integer "appliance_id"
@@ -85,10 +79,9 @@ ActiveRecord::Schema.define(version: 20150821055554) do
     t.integer  "security_proxy_id"
     t.string   "metadata_global_id"
     t.integer  "os_family_id"
+    t.index ["name"], name: "index_atmosphere_appliance_types_on_name", unique: true, using: :btree
+    t.index ["os_family_id"], name: "index_atmosphere_appliance_types_on_os_family_id", using: :btree
   end
-
-  add_index "atmosphere_appliance_types", ["name"], name: "index_atmosphere_appliance_types_on_name", unique: true, using: :btree
-  add_index "atmosphere_appliance_types", ["os_family_id"], name: "index_atmosphere_appliance_types_on_os_family_id", using: :btree
 
   create_table "atmosphere_appliances", force: :cascade do |t|
     t.integer  "appliance_set_id",                                    null: false
@@ -122,8 +115,8 @@ ActiveRecord::Schema.define(version: 20150821055554) do
   create_table "atmosphere_deployments", force: :cascade do |t|
     t.integer  "virtual_machine_id"
     t.integer  "appliance_id"
-    t.string   "billing_state",      default: "prepaid", null: false
-    t.datetime "prepaid_until",      default: "now()",   null: false
+    t.string   "billing_state",      default: "prepaid",      null: false
+    t.datetime "prepaid_until",      default: -> { "now()" }, null: false
   end
 
   create_table "atmosphere_dev_mode_property_sets", force: :cascade do |t|
@@ -188,9 +181,8 @@ ActiveRecord::Schema.define(version: 20150821055554) do
     t.text     "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["appliance_type_id", "virtual_machine_template_id", "tenant_source_id", "tenant_destination_id"], name: "atmo_mj_ix", unique: true, using: :btree
   end
-
-  add_index "atmosphere_migration_jobs", ["appliance_type_id", "virtual_machine_template_id", "tenant_source_id", "tenant_destination_id"], name: "atmo_mj_ix", unique: true, using: :btree
 
   create_table "atmosphere_os_families", force: :cascade do |t|
     t.string "name", default: "Windows", null: false
@@ -265,9 +257,8 @@ ActiveRecord::Schema.define(version: 20150821055554) do
     t.integer  "user_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["user_id", "name"], name: "index_atmosphere_user_keys_on_user_id_and_name", unique: true, using: :btree
   end
-
-  add_index "atmosphere_user_keys", ["user_id", "name"], name: "index_atmosphere_user_keys_on_user_id_and_name", unique: true, using: :btree
 
   create_table "atmosphere_users", force: :cascade do |t|
     t.string   "login",                  default: "", null: false
@@ -286,11 +277,10 @@ ActiveRecord::Schema.define(version: 20150821055554) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "authentication_token"
+    t.index ["authentication_token"], name: "index_atmosphere_users_on_authentication_token", unique: true, using: :btree
+    t.index ["email"], name: "index_atmosphere_users_on_email", unique: true, using: :btree
+    t.index ["login"], name: "index_atmosphere_users_on_login", unique: true, using: :btree
   end
-
-  add_index "atmosphere_users", ["authentication_token"], name: "index_atmosphere_users_on_authentication_token", unique: true, using: :btree
-  add_index "atmosphere_users", ["email"], name: "index_atmosphere_users_on_email", unique: true, using: :btree
-  add_index "atmosphere_users", ["login"], name: "index_atmosphere_users_on_login", unique: true, using: :btree
 
   create_table "atmosphere_users_security_policies", force: :cascade do |t|
     t.integer "user_id"
@@ -342,30 +332,26 @@ ActiveRecord::Schema.define(version: 20150821055554) do
     t.datetime "updated_at"
     t.integer  "virtual_machine_template_id"
     t.integer  "virtual_machine_flavor_id"
-    t.integer  "monitoring_id"
     t.datetime "updated_at_site"
+    t.index ["tenant_id", "id_at_site"], name: "atmo_vm_cs_id_id_at_site_ix", unique: true, using: :btree
+    t.index ["virtual_machine_template_id"], name: "atmo_vm_vmt_ix", using: :btree
   end
-
-  add_index "atmosphere_virtual_machines", ["tenant_id", "id_at_site"], name: "atmo_vm_cs_id_id_at_site_ix", unique: true, using: :btree
-  add_index "atmosphere_virtual_machines", ["virtual_machine_template_id"], name: "atmo_vm_vmt_ix", using: :btree
 
   create_table "security_policies", force: :cascade do |t|
     t.string   "name"
     t.text     "payload"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["name"], name: "index_security_policies_on_name", unique: true, using: :btree
   end
-
-  add_index "security_policies", ["name"], name: "index_security_policies_on_name", unique: true, using: :btree
 
   create_table "security_proxies", force: :cascade do |t|
     t.string   "name"
     t.text     "payload"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["name"], name: "index_security_proxies_on_name", unique: true, using: :btree
   end
-
-  add_index "security_proxies", ["name"], name: "index_security_proxies_on_name", unique: true, using: :btree
 
   add_foreign_key "atmosphere_appliance_configuration_instances", "atmosphere_appliance_configuration_templates", column: "appliance_configuration_template_id", name: "ac_instances_ac_template_id_fk"
   add_foreign_key "atmosphere_appliance_configuration_templates", "atmosphere_appliance_types", column: "appliance_type_id", name: "atmo_config_templates_at_id_fk"
