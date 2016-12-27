@@ -74,6 +74,8 @@ group :development, :test do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'guard-rspec', require: false
+
+  gem 'thin'
 end
 
 group :test do
@@ -89,3 +91,4 @@ end
 gem 'puma'
 gem 'clockwork'
 gem 'newrelic_rpm'
+gem 'jwt'

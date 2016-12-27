@@ -3,6 +3,7 @@ module Atmosphere::UserExt
 
   included do
     include Atmosphere::TokenAuthenticatable
+#    include Atmosphere::JwtAuthenticatable
 
     has_and_belongs_to_many :security_proxies,
       class_name: '::SecurityProxy'
@@ -41,6 +42,20 @@ module Atmosphere::UserExt
       user.email     = auth.info.email
       user.full_name = auth.info.full_name
       user.roles     = auth.info.roles
+      user.save
+
+      user
+    end
+
+    def jwt_find_or_create(auth)
+      user = find_by(email: auth['email'])
+      if user.blank?
+        user = new
+        user.generate_password
+      end
+      user.login = auth['email']
+      user.email = auth['email']
+      user.full_name = auth['name']
       user.save
 
       user

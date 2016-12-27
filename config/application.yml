@@ -1,0 +1,23 @@
+defaults: &defaults
+  jwt:
+    keys:
+      - <%= Rails.root.join('config', 'jwt', 'dev.pem') %>
+    key_algorithm: ES256
+    expiration_time: 3600
+    issuer: 'EurValve Portal'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+  jwt:
+    keys:
+      - <%= Rails.root.join('config', 'jwt', 'test1.pem') %>
+      - <%= Rails.root.join('config', 'jwt', 'test2.pem') %>
+
+production:
+  <<: *defaults
+  jwt:
+    keys:
+      - <%= Rails.root.join('config', 'jwt', 'vapor.pem') %>
