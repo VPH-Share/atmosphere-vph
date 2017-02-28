@@ -14,7 +14,7 @@ module Atmosphere
       end
 
       def token_request?
-        mi_ticket || token
+        mi_ticket || jwt_token || token
       end
 
       private
@@ -22,6 +22,12 @@ module Atmosphere
       def mi_ticket
         params[Air.config.mi_authentication_key] ||
           request.headers[Air.config.header_mi_authentication_key]
+      end
+
+      def jwt_token
+        pattern = /^Bearer /
+        header  = request.env['HTTP_AUTHORIZATION']
+        header.gsub(pattern, '') if header && header.match(pattern)
       end
 
       def token

@@ -8,9 +8,9 @@ Devise.setup do |config|
     roles_map: Air.config.vph.roles_map,
     ssl_verify: Air.config.vph.ssl_verify
 
+  Warden::Strategies.add(:jwt_authenticatable, Devise::Strategies::JwtAuthenticatable)
   Warden::Strategies.add(:token_authenticatable, Devise::Strategies::TokenAuthenticatable)
   Warden::Strategies.add(:mi_token_authenticatable, Devise::Strategies::MiTokenAuthenticatable)
-  Warden::Strategies.add(:jwt_authenticatable, Devise::Strategies::JwtAuthenticatable)
 
   strategies = [:token_authenticatable, :mi_token_authenticatable, :jwt_authenticatable]
 
