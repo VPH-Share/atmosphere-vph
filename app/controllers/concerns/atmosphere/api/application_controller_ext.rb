@@ -17,6 +17,37 @@ module Atmosphere
         mi_ticket || jwt_token || token
       end
 
+      def get_pdp_for_request
+        Rails.logger.debug("Matching PDP to request content...")
+        pdp = nil # Use permit-nothing default pdp
+
+        if
+        (
+        params[Air.config.mi_authentication_key] ||
+            request.headers[Air.config.header_mi_authentication_key]
+        )
+          Rails.logger.debug("MI ticket detected; using MI PDP")
+          pdp = MiApplianceTypePdp
+        elsif
+        (
+        params[Devise::Strategies::TokenAuthenticatable.key].presence ||
+            request.headers[Devise::Strategies::TokenAuthenticatable.header_key].presence
+        )
+          Rails.logger.debug("Private token detected; using default PDP")
+          pdp = Atmosphere::DefaultPdp
+        elsif
+        (
+        request.env['HTTP_AUTHORIZATION'] && request.env['HTTP_AUTHORIZATION'].match(/^Bearer /)
+        )
+          Rails.logger.debug("JWT token detected; using local PDP")
+          pdp = Atmosphere::LocalPdp
+        else
+          # TODO: Add a permit-nothing class to handle malformed requests gracefully.
+        end
+
+        pdp
+      end
+
       private
 
       def mi_ticket
@@ -43,6 +74,10 @@ module Atmosphere
       def project
         params[Air.config.project_key] ||
           request.headers[Air.config.header_project_key]
+      end
+
+      def current_ability
+        @current_ability ||= Atmosphere.ability_class.new(current_user, load_admin_abilities?, get_pdp_for_request)
       end
     end
   end
