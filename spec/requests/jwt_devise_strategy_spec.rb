@@ -90,4 +90,66 @@ describe Devise::Strategies::JwtAuthenticatable do
     get '/api/v1/appliance_sets', nil, {'Authorization' => "Bearer #{@valid_token_new_user}"}
     expect(Atmosphere::User.count).to eq 2
   end
+
+  # this checks whether the proper PDP is used to validate requests which contain JWT tokens
+  context 'starting appliances' do
+    let!(:portal_set) do
+      create(:appliance_set, user: jwtuser, appliance_set_type: :portal)
+    end
+    let!(:development_set) do
+      create(:appliance_set, user: jwtuser, appliance_set_type: :development)
+    end
+
+    let!(:fund) { create(:fund) }
+
+    let!(:public_at) { create(:appliance_type, visible_to: :all) }
+
+    let(:static_config) do
+      create(:static_config_template, appliance_type: public_at)
+    end
+    let(:static_request_body) { start_request(static_config, portal_set) }
+
+    let(:development_set) do
+      create(:appliance_set, user: jwtuser, appliance_set_type: :development)
+    end
+
+    let(:static_dev_request_body) do
+      {
+        appliance: {
+          configuration_template_id: static_config.id,
+          appliance_set_id: development_set.id,
+          fund_id: fund.id
+        }
+      }
+    end
+
+    it 'uses correct PDP to disallow starting appliance when no role is defined' do
+      puts "USER: #{jwtuser.inspect}"
+      puts "Public AT: #{public_at.inspect}"
+      post '/api/v1/appliances', headers: {'Authorization' => "Bearer #{@valid_token}"}, params: static_request_body
+      expect(response.status).to eq 403
+    end
+
+    it 'uses correct PDP to allow starting appliance when proper role exists' do
+      create(:user_appliance_type, user: jwtuser, appliance_type: public_at, role: 'developer')
+      post '/api/v1/appliances', headers: {'Authorization' => "Bearer #{@valid_token}"}, params: static_request_body
+      expect(response.status).to eq 201
+    end
+  end
+
+  def start_request(at_config, appliance_set)
+    generic_start_request(at_config, appliance_set,
+                          name: 'my_name', description: 'my_description')
+  end
+
+  def generic_start_request(at_config, appliance_set, options = {})
+    {
+        appliance: {
+            configuration_template_id: at_config.id,
+            appliance_set_id: appliance_set.id,
+            name: options[:name],
+            description: options[:description]
+        }
+    }
+  end
 end

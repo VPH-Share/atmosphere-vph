@@ -8,8 +8,6 @@ Devise.setup do |config|
     roles_map: Air.config.vph.roles_map,
     ssl_verify: Air.config.vph.ssl_verify
 
-  Rails.logger.debug("Initializing Devise strategies...")
-
   Warden::Strategies.add(:jwt_authenticatable, Devise::Strategies::JwtAuthenticatable)
   Warden::Strategies.add(:token_authenticatable, Devise::Strategies::TokenAuthenticatable)
   Warden::Strategies.add(:mi_token_authenticatable, Devise::Strategies::MiTokenAuthenticatable)
