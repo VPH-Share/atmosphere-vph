@@ -123,17 +123,9 @@ describe Devise::Strategies::JwtAuthenticatable do
       }
     end
 
-    it 'uses correct PDP to disallow starting appliance when no role is defined' do
-      puts "USER: #{jwtuser.inspect}"
-      puts "Public AT: #{public_at.inspect}"
+    it 'uses correct PDP to disallow starting appliance' do
+      expect_any_instance_of(Atmosphere::LocalPdp).to receive(:can_start_in_production?).and_return(false)
       post '/api/v1/appliances', headers: {'Authorization' => "Bearer #{@valid_token}"}, params: static_request_body
-      expect(response.status).to eq 403
-    end
-
-    it 'uses correct PDP to allow starting appliance when proper role exists' do
-      create(:user_appliance_type, user: jwtuser, appliance_type: public_at, role: 'developer')
-      post '/api/v1/appliances', headers: {'Authorization' => "Bearer #{@valid_token}"}, params: static_request_body
-      expect(response.status).to eq 201
     end
   end
 
