@@ -66,3 +66,4 @@ production:
     pending: 10
     ok: 120
     lost: 15
+
