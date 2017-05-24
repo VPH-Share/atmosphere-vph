@@ -17,6 +17,7 @@ module Devise
 
       def authenticate!
         return fail(:invalid_ticket) unless mi_ticket
+
         begin
           mi_user_info = user_info(mi_ticket)
           return fail!(:invalid_credentials) if !mi_user_info

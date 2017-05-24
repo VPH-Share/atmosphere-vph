@@ -21,3 +21,4 @@ production:
   jwt:
     keys:
       - <%= Rails.root.join('config', 'jwt', 'vapor.pem') %>
+      - <%= Rails.root.join('config', 'jwt', 'vapor-dev.pem') %>
