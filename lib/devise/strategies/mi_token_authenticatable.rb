@@ -11,8 +11,6 @@ module Devise
     #   http://myapp.example.com/?mi_ticket=MI_TOKEN
     #   http://myapp.example.com Header: MI_TOKEN: MI_TOKEN
     class MiTokenAuthenticatable < Authenticatable
-      include Sudoable
-
       def valid?
         super || mi_ticket
       end
@@ -28,7 +26,6 @@ module Devise
 
           resource = mapping.to.vph_find_or_create(
               ::OmniAuth::AuthHash.new({info: auth}))
-          resource = sudo!(resource, sudo_as) if sudo_as
 
           return fail(:invalid_mi_ticket) unless resource
           resource.mi_ticket = mi_ticket

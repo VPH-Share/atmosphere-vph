@@ -42,13 +42,14 @@ describe Atmosphere::Api::V1::AppliancesController do
     end
 
     it 'creates dynamic configuration with header mi ticket injected' do
-      post api("/appliances"), dynamic_request_with_mi_ticket_body, {"MI-TICKET" => 'ticket'}
+      post api("/appliances"), params: dynamic_request_with_mi_ticket_body,
+           headers: {"MI-TICKET" => 'ticket'}
       config_instance = Atmosphere::ApplianceConfigurationInstance.find(appliance_response['appliance_configuration_instance_id'])
       expect(config_instance.payload).to eq 'dynamic config with mi_ticket: ticket'
     end
 
     it 'creates dynamic configuration with query param mi ticket injected' do
-      post api("/appliances?mi_ticket=ticket"), dynamic_request_with_mi_ticket_body
+      post api("/appliances?mi_ticket=ticket"), params: dynamic_request_with_mi_ticket_body
       config_instance = Atmosphere::ApplianceConfigurationInstance.find(appliance_response['appliance_configuration_instance_id'])
       expect(config_instance.payload).to eq 'dynamic config with mi_ticket: ticket'
     end

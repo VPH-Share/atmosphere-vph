@@ -1,5 +1,6 @@
 require 'devise/strategies/mi_token_authenticatable'
 require 'devise/strategies/token_authenticatable'
+require 'devise/strategies/jwt_authenticatable'
 
 Devise.setup do |config|
   config.omniauth :vphticket,
@@ -9,8 +10,9 @@ Devise.setup do |config|
 
   Warden::Strategies.add(:token_authenticatable, Devise::Strategies::TokenAuthenticatable)
   Warden::Strategies.add(:mi_token_authenticatable, Devise::Strategies::MiTokenAuthenticatable)
+  Warden::Strategies.add(:jwt_authenticatable, Devise::Strategies::JwtAuthenticatable)
 
-  strategies = [:token_authenticatable, :mi_token_authenticatable]
+  strategies = [:token_authenticatable, :mi_token_authenticatable, :jwt_authenticatable]
 
   config.warden do |manager|
     manager.intercept_401 = false
