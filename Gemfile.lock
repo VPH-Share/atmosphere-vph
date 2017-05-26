@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: 3b1c82f7b1a7ef1d9b2fe4466d5c73592a1008b6
-  branch: dare
+  revision: 1e18764daf820f9a954c6a564625c67cd651034f
+  branch: dare_new
   specs:
     atmosphere (1.0.0)
       active_model_serializers (~> 0.8.0)
@@ -325,7 +325,7 @@ GEM
     multi_json (1.12.1)
     multipart-post (2.0.0)
     nenv (0.3.0)
-    newrelic_rpm (4.1.0.333)
+    newrelic_rpm (4.2.0.334)
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
