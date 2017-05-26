@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: db4d1e1c7ad308742bd10808137d1171ca446ef3
+  revision: 6037b09bba9d571517ee0ee7fc91bb3ef9077868
   branch: dare
   specs:
     atmosphere (1.0.0)
@@ -12,6 +12,7 @@ GIT
       devise (~> 4.2)
       enumerize (~> 2.0)
       fog (= 1.37.0)
+      fog-core (= 1.42.0)
       font-awesome-sass (~> 4.7.0)
       github-markup
       gravtastic
@@ -184,7 +185,7 @@ GEM
       fog-core (~> 1.22)
       fog-json
       inflecto (~> 0.0.2)
-    fog-core (1.44.3)
+    fog-core (1.42.0)
       builder
       excon (~> 0.49)
       formatador (~> 0.2)
