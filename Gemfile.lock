@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: 8f39ad1d03328f2bf8a7639612ab1f57b879dd9c
+  revision: ae696161b7e3f7e8461f0e4e6ba29e99d6d8d9b1
   branch: dare
   specs:
     atmosphere (1.0.0)
@@ -130,7 +130,7 @@ GEM
       activesupport (>= 3.2)
     erubis (2.7.0)
     eventmachine (1.2.3)
-    excon (0.55.0)
+    excon (0.56.0)
     execjs (2.7.0)
     factory_girl (4.8.0)
       activesupport (>= 3.0.0)
@@ -291,7 +291,7 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
-    i18n (0.8.1)
+    i18n (0.8.4)
     inflecto (0.0.2)
     ipaddress (0.8.3)
     jquery-rails (4.3.1)
@@ -351,7 +351,7 @@ GEM
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     public_suffix (2.0.5)
-    puma (3.8.2)
+    puma (3.9.1)
     rack (2.0.3)
     rack-cors (0.4.1)
     rack-protection (2.0.0)
@@ -449,7 +449,7 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    sentry-raven (2.5.1)
+    sentry-raven (2.5.2)
       faraday (>= 0.7.6, < 1.0)
     settingslogic (2.0.9)
     sexp_processor (4.9.0)
