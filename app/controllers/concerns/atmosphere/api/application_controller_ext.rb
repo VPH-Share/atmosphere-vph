@@ -21,10 +21,18 @@ module Atmosphere
           # pdp = nil # TODO: use permit-nothing default pdp
 
           pdp = case
-            when mi_request? then MiApplianceTypePdp
-            when token_request? then Atmosphere::DefaultPdp
-            when jwt_request? then Atmosphere::LocalPdp
-            else nil # TODO: use permit-nothing default pdp
+                  when mi_request? then
+                    Rails.logger.debug("Using MI PDP.")
+                    MiApplianceTypePdp
+                  when token_request? then
+                    Rails.logger.debug("Using default PDP.")
+                    Atmosphere::DefaultPdp
+                  when jwt_request? then
+                    Rails.logger.debug("Using local PDP (JWT request).")
+                    Atmosphere::LocalPdp
+                  else
+                    Rails.logger.debug("Using no PDP (unidentifiable request).")
+                    nil # TODO: use permit-nothing default pdp
           end
 
           pdp
