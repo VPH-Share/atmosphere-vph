@@ -31,8 +31,8 @@ module Atmosphere
                     Rails.logger.debug("Using local PDP (JWT request).")
                     Atmosphere::LocalPdp
                   else
-                    Rails.logger.debug("Using no PDP (unidentifiable request).")
-                    nil # TODO: use permit-nothing default pdp
+                    Rails.logger.debug("Using default PDP (unidentifiable request).")
+                    Atmosphere::DefaultPdp # TODO: use permit-nothing default pdp
           end
 
           pdp
