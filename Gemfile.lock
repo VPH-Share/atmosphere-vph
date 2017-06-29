@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dice-cyfronet/atmosphere.git
-  revision: f37c5dd26be5e9d1d37e99a5277dd8f69fd1aa78
+  revision: 97c1897638363364c97efb4d76d956546b0d77b7
   branch: dare
   specs:
     atmosphere (1.0.0)
@@ -242,7 +242,7 @@ GEM
     fog-voxel (0.1.0)
       fog-core
       fog-xml
-    fog-vsphere (1.10.0)
+    fog-vsphere (1.11.0)
       fog-core
       rbvmomi (~> 1.9)
     fog-xenserver (0.3.0)
@@ -393,7 +393,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    rbvmomi (1.11.2)
+    rbvmomi (1.11.3)
       builder (~> 3.0)
       json (>= 1.8)
       nokogiri (~> 1.5)
